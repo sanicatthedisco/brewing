@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://f6q3hscdopp7"]
 
-[ext_resource type="Script" uid="uid://dqmnwdhq534tf" path="res://testing/test_character.gd" id="1_fksbf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0epr"]
 
-[node name="test_character" type="Node2D" unique_id=1761842123]
-script = ExtResource("1_fksbf")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ickja"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1050556539]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427216875]
+sprite_frames = SubResource("SpriteFrames_l0epr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975426209]
+shape = SubResource("RectangleShape2D_ickja")

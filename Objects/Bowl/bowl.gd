@@ -7,7 +7,7 @@ extends Node2D
 		_update_liquid()
 
 @onready var liquid: ColorRect = $Mask/Liquid
-@onready var full_y := liquid.position.y  # y when the bowl is empty-looking, set in the editor
+@onready var full_y := liquid.position.y 
 
 func _update_liquid():
 	if not is_node_ready():
@@ -16,4 +16,3 @@ func _update_liquid():
 
 func _process(delta):
 	fill += 0.3
-	_update_liquid()

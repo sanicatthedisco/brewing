@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cqm6bwqwolnvf"]
+
+[ext_resource type="PackedScene" uid="uid://cmyi2np3k5aa4" path="res://Objects/Ingredients/Draggable/Draggable.tscn" id="1_base"]
+[ext_resource type="Script" uid="uid://dyohy1r1rfmx7" path="res://Objects/Ingredients/Pourable/pourable.gd" id="1_wy2w8"]
+
+[node name="Pourable" unique_id=804989589 instance=ExtResource("1_base")]
+script = ExtResource("1_wy2w8")
+pour_angle = -90.0
+upright_angle = 0.0

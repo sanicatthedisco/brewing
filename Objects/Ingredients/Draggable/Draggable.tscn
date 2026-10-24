@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cmyi2np3k5aa4"]
+
+[ext_resource type="Script" uid="uid://do8b4ofriswb8" path="res://Objects/Ingredients/Draggable/draggable.gd" id="1_yfv1d"]
+[ext_resource type="Texture2D" uid="uid://bqes3a3mhg8bc" path="res://Assets/Sprites/flask.png" id="2_iyngx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueyfw"]
+size = Vector2(50, 85)
+
+[node name="Draggable" type="RigidBody2D" unique_id=804989589]
+input_pickable = true
+lock_rotation = true
+freeze_mode = 1
+script = ExtResource("1_yfv1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1537178962]
+texture = ExtResource("2_iyngx")
+
+[node name="PhysicsCollider" type="CollisionPolygon2D" parent="." unique_id=1515525844]
+polygon = PackedVector2Array(0, 44, 13, 42, 25, 22, 26, 8, 9, 4, 2, -43, -10, -43, -9, 4, -26, 12, -30, 23, -17, 41)
+
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=790295964]
+
+[node name="InteractionZone" type="CollisionShape2D" parent="InteractionDetector" unique_id=1632809004]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_ueyfw")

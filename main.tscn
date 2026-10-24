@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dq3jj7k2u8cau" path="res://Objects/Bowl/Bowl.tscn" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bkn5x1ibokwc8" path="res://Objects/LiquidVessel/LiquidVessel.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cqm6bwqwolnvf" path="res://Objects/Ingredients/Pourable/Pourable.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=1694163084]
 
@@ -12,5 +12,8 @@ position = Vector2(560, 467)
 [node name="Table" parent="." unique_id=1339285828 instance=ExtResource("1_0xm2m")]
 position = Vector2(565, 542)
 
-[node name="LiquidVessel" parent="." unique_id=1086760637 instance=ExtResource("2_h2yge")]
-position = Vector2(800, 474)
+[node name="Pourable" parent="." unique_id=804989589 instance=ExtResource("3_h2yge")]
+position = Vector2(815, 336)
+lock_rotation = false
+pour_angle = -90.0
+upright_angle = 0.0

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djv4uu214k1ac"]
 
-[ext_resource type="Texture2D" uid="uid://bl50twpgk7kyg" path="res://dialogue/textbox.png" id="1_k7ve7"]
+[ext_resource type="Texture2D" uid="uid://bl50twpgk7kyg" path="res://Assets/Sprites/Dialogue/textbox.png" id="1_k7ve7"]
 
 [sub_resource type="FontFile" id="FontFile_d0rgj"]
 subpixel_positioning = 0

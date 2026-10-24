@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://babcabugu4ajh"
-valid=false
+uid="uid://bl50twpgk7kyg"
+path="res://.godot/imported/textbox.png-3dff94c4fc055dfb56d7345c691940a6.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://textbubble.png"
+source_file="res://Assets/Sprites/Dialogue/textbox.png"
+dest_files=["res://.godot/imported/textbox.png-3dff94c4fc055dfb56d7345c691940a6.ctex"]
 
 [params]
 

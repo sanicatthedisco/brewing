@@ -8,8 +8,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lafr"]
 size = Vector2(104, 309)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmhsy"]
+size = Vector2(184, 210)
+
 [node name="Mug" unique_id=1266183240 instance=ExtResource("1_8lafr")]
-scale = Vector2(0.5, 0.5)
 script = ExtResource("2_1bp4k")
 
 [node name="Mask" parent="." index="0" unique_id=1087823141]
@@ -32,3 +34,7 @@ texture = ExtResource("3_1bp4k")
 [node name="CollisionShape2D" parent="PourZone" parent_id_path=PackedInt32Array(806354122) index="0" unique_id=186712206]
 position = Vector2(-34, -253.5)
 shape = SubResource("RectangleShape2D_8lafr")
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=1592872759]
+position = Vector2(-30, 1)
+shape = SubResource("RectangleShape2D_jmhsy")

@@ -27,6 +27,7 @@ func _input(event):
 				_end_dragging()
 		
 func _begin_dragging():
+	print("hi")
 	# Must freeze rigidbody physics
 	dragging = true
 	freeze = true

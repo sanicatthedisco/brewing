@@ -1,5 +1,5 @@
 class_name IngredientContainer
-extends Node2D
+extends Draggable
 
 @onready var mask: Sprite2D = $Mask
 @onready var liquid: ColorRect = $Mask/Liquid

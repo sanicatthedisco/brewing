@@ -5,7 +5,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_heqi2"]
 size = Vector2(141, 139)
 
-[node name="IngredientContainer" type="Node2D" unique_id=1266183240]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmhsy"]
+size = Vector2(50, 85)
+
+[node name="IngredientContainer" type="RigidBody2D" unique_id=813111274]
+input_pickable = true
 script = ExtResource("1_372x3")
 
 [node name="Mask" type="Sprite2D" parent="." unique_id=1087823141]
@@ -33,3 +37,11 @@ clip_children = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PourZone" unique_id=186712206]
 position = Vector2(38.5, -90.5)
 shape = SubResource("RectangleShape2D_heqi2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592872759]
+
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=69867065]
+
+[node name="InteractionZone" type="CollisionShape2D" parent="InteractionDetector" unique_id=805710803]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_jmhsy")

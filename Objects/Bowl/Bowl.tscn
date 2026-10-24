@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://5ogxecds3hft" path="res://Assets/Sprites/bowl.png" id="3_a75se"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueyfw"]
-size = Vector2(386, 330)
+size = Vector2(226, 436)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54r1u"]
 size = Vector2(392, 276)
@@ -22,7 +22,8 @@ texture = ExtResource("2_a75se")
 offset_left = -190.0
 offset_top = 128.0
 offset_right = 194.0
-offset_bottom = 484.0
+offset_bottom = 390.0
+mouse_filter = 2
 color = Color(0.18431373, 1, 1, 1)
 
 [node name="Exterior" type="Sprite2D" parent="." unique_id=1980966930]
@@ -31,7 +32,7 @@ texture = ExtResource("3_a75se")
 [node name="PourZone" type="Area2D" parent="." unique_id=65261691]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PourZone" unique_id=210727465]
-position = Vector2(3, -301)
+position = Vector2(1, -248)
 shape = SubResource("RectangleShape2D_ueyfw")
 
 [node name="PhysicsCollider" type="CollisionShape2D" parent="." unique_id=1929476826]

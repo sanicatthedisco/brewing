@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dq3jj7k2u8cau" path="res://Objects/Bowl/Bowl.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cqm6bwqwolnvf" path="res://Objects/Ingredients/Pourable/Pourable.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Mug/Mug.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=1694163084]
 
 [node name="Bowl" parent="." unique_id=1129401254 instance=ExtResource("1_h2yge")]
-position = Vector2(560, 467)
+position = Vector2(322, 469)
 
 [node name="Table" parent="." unique_id=1339285828 instance=ExtResource("1_0xm2m")]
 position = Vector2(565, 542)
@@ -15,6 +16,6 @@ position = Vector2(565, 542)
 [node name="Pourable" parent="." unique_id=804989589 instance=ExtResource("3_h2yge")]
 position = Vector2(815, 336)
 lock_rotation = false
-pour_angle = null
-upright_angle = null
-fill_rate = null
+
+[node name="Mug" parent="." unique_id=1266183240 instance=ExtResource("4_1bvp3")]
+position = Vector2(580, 491)

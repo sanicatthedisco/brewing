@@ -2,7 +2,7 @@ extends Draggable
 
 @export var pour_angle := -90.0
 @export var upright_angle := 0.0
-@export var fill_rate := 30.0
+var fill_rate := 3
 
 var pouring := false
 var pour_dir := 1
@@ -11,7 +11,7 @@ var max_stream_y: float
 var stream_fall_speed := 500.0
 var stream_made_contact := false
 
-var pour_target: Bowl = null
+var pour_target: IngredientContainer = null
 
 @onready var stream: Line2D = $Stream
 @onready var spout: Area2D = $Spout
@@ -30,7 +30,7 @@ func _physics_process(delta):
 			if abs(rotation_degrees) > abs(pour_angle) * 0.8:
 				_update_stream(delta)
 				if stream_made_contact:
-					pour_target.add_liquid(fill_rate * delta)
+					pour_target.add_ingredient(Ingredients.WATER, fill_rate * delta)
 		else:
 			rotation = lerp_angle(rotation, upright_angle, 0.1)
 
@@ -49,7 +49,7 @@ func _update_stream(delta):
 	stream.add_point(spout.global_position)
 	stream.add_point(Vector2(spout.global_position.x, stream_y))
 
-func _begin_pouring(target: Bowl):
+func _begin_pouring(target: IngredientContainer):
 	pouring = true
 	pour_target = target
 	max_stream_y = spout.global_position.y

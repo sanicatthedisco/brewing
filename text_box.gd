@@ -2,6 +2,7 @@ extends MarginContainer
 
 @onready var label = $MarginContainer/Label
 @onready var timer = $LetterDisplayTimer
+@onready var audio_player = $AudioStreamPlayer #need to preload the sound in a function
 const MAX_WIDTH = 500#maximum width of the textbubble
 
 var text = ""
@@ -14,9 +15,10 @@ var punctuation_time = 0.2
 
 signal finished_displaying
 
-func display_text(text_to_display: String):
+func display_text(text_to_display: String, speech_sfx: AudioStream):
 	text = text_to_display
 	label.text = text_to_display
+	audio_player.stream = speech_sfx
 	
 	await resized
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
@@ -50,10 +52,12 @@ func _display_letter():
 		_:
 			timer.start(letter_time)
 			
-		
-	
+			var new_audio_player = audio_player.duplicate()
+			new_audio_player.pitch_scale += randf
+	 
 func _on_letter_display_timer_timeout():
 	_display_letter()
+	
 	
 
 	

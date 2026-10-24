@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bl50twpgk7kyg" path="res://dialogue/textbox.png" id="1_k7ve7"]
 
 [sub_resource type="FontFile" id="FontFile_d0rgj"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -48,3 +51,5 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="MarginContainer/Label" unique_id=594125594]
 position = Vector2(20, 9)
 zoom = Vector2(8, 8)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=729566560]

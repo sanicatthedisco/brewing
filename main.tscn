@@ -33,10 +33,15 @@ extends StaticBody2D
 @onready var rim = collider.shape as SegmentShape2D
 "
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0odxb"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1u8w0"]
 resource_local_to_scene = true
 a = Vector2(-1000, 0)
 b = Vector2(1071, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0odxb"]
+resource_local_to_scene = true
+a = Vector2(-187, 0)
+b = Vector2(214, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lswn8"]
 resource_local_to_scene = true
@@ -49,11 +54,6 @@ a = Vector2(-187, 0)
 b = Vector2(214, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xuqvo"]
-resource_local_to_scene = true
-a = Vector2(-187, 0)
-b = Vector2(214, 1)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_qsp4k"]
 resource_local_to_scene = true
 a = Vector2(-198, -1)
 b = Vector2(212.5, 0)
@@ -188,21 +188,21 @@ position = Vector2(928, 988)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Garnishes/Surfaces/Table" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_0odxb")
+shape = SubResource("SegmentShape2D_1u8w0")
 
 [node name="Shelf1" parent="Garnishes/Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
 position = Vector2(105, 530)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf1" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_lswn8")
+shape = SubResource("SegmentShape2D_0odxb")
 
 [node name="Shelf3" parent="Garnishes/Surfaces" unique_id=1016166064 instance=ExtResource("1_0xm2m")]
 position = Vector2(1789, 246)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf3" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_a6jrf")
+shape = SubResource("SegmentShape2D_lswn8")
 metadata/_edit_lock_ = true
 
 [node name="Shelf4" parent="Garnishes/Surfaces" unique_id=341765567 instance=ExtResource("1_0xm2m")]
@@ -210,7 +210,7 @@ position = Vector2(1794, 528)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf4" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_xuqvo")
+shape = SubResource("SegmentShape2D_a6jrf")
 metadata/_edit_lock_ = true
 
 [node name="Shelf2" parent="Garnishes/Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
@@ -218,7 +218,7 @@ position = Vector2(114, 240)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf2" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_qsp4k")
+shape = SubResource("SegmentShape2D_xuqvo")
 
 [node name="Pourable" parent="." unique_id=253281349 instance=ExtResource("23_1u8w0")]
 position = Vector2(229, 165)

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://f6q3hscdopp7"]
+
+[ext_resource type="Script" uid="uid://cbdbu3qkiwe6f" path="res://Objects/Dialogue/Characters/Adam/adam.gd" id="1_1t1e8"]
+[ext_resource type="Texture2D" uid="uid://cva8hres8vye0" path="res://Assets/Sprites/char_transparent.png" id="1_4fqcr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0epr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4fqcr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ickja"]
+size = Vector2(412, 916)
+
+[node name="Adam" type="CharacterBody2D" unique_id=1050556539]
+z_index = -4
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1t1e8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427216875]
+position = Vector2(374, 537)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_l0epr")
+frame_progress = 0.22277889
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975426209]
+position = Vector2(368, 533)
+shape = SubResource("RectangleShape2D_ickja")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=275994210]
+top_level = true
+position = Vector2(971, 544)

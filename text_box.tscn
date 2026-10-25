@@ -47,7 +47,6 @@ theme_override_constants/margin_bottom = 8
 
 [node name="Label" type="Label" parent="MarginContainer" unique_id=1311246847]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.35990745, 0.13055974, 0.005570172, 1)
 theme_override_fonts/font = SubResource("FontFile_d0rgj")
 vertical_alignment = 1
 

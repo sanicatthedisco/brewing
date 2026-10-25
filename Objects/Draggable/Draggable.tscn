@@ -9,7 +9,6 @@ size = Vector2(50, 85)
 [node name="Draggable" type="RigidBody2D" unique_id=804989589]
 input_pickable = true
 lock_rotation = true
-freeze_mode = 1
 script = ExtResource("1_yfv1d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1537178962]

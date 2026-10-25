@@ -53,8 +53,14 @@ shape = SubResource("RectangleShape2D_jmhsy")
 [node name="Stream" type="Line2D" parent="." unique_id=1849741083]
 top_level = true
 
-[node name="Spout" type="Area2D" parent="." unique_id=751968024]
+[node name="SpoutStuff" type="Node2D" parent="." unique_id=1172241664]
+
+[node name="Spout" type="Area2D" parent="SpoutStuff" unique_id=751968024]
 position = Vector2(-4, -45)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spout" unique_id=1708787041]
+[node name="SpoutCollider" type="CollisionShape2D" parent="SpoutStuff/Spout" unique_id=1708787041]
 shape = SubResource("CircleShape2D_jmhsy")
+
+[node name="SpoutPosLeft" type="Marker2D" parent="SpoutStuff" unique_id=861350612]
+
+[node name="SpoutPosRight" type="Marker2D" parent="SpoutStuff" unique_id=753664723]

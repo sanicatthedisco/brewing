@@ -52,8 +52,9 @@ func _pour_out_contents(amount: float) -> bool:
 func _fill_target(target: IngredientContainer, delta: float):
 	for ing in contents:
 		var weighted_amount := fill_rate * delta * contents[ing] / fill
-		remove_ingredient(ing, weighted_amount)
-		target.add_ingredient(ing, weighted_amount)
+		if contents[ing] > fill_rate * delta:
+			remove_ingredient(ing, weighted_amount)
+			target.add_ingredient(ing, weighted_amount)
 
 func _update_fill() -> void:
 	fill = 0
@@ -69,19 +70,22 @@ func _update_fill() -> void:
 		
 	liquid.color = content_color
 	stream.default_color = content_color
-	internal_stream.default_color = content_color
 	_update_liquid()
+	
+	if fill < 0.1 and pouring:
+		_end_pouring()
 
 #region Liquid rendering
 func get_liquid_surface_y():
 	return liquid.global_position.y
 
-func update_stream(spout_pos: Vector2):
+func update_stream(spout_pos: Vector2, color: Color):
 	var local_pos = internal_stream.to_local(spout_pos)
+	internal_stream.default_color = color
 	internal_stream.visible = true
 	internal_stream.clear_points()
-	internal_stream.add_point(Vector2(local_pos.x, get_liquid_surface_y()))
-	internal_stream.add_point(local_pos)
+	internal_stream.add_point(internal_stream.to_local(Vector2(spout_pos.x, get_liquid_surface_y())))
+	internal_stream.add_point(internal_stream.to_local(Vector2(spout_pos.x, get_global_mask_top_y())))
 
 func _update_liquid():
 	if not is_node_ready():
@@ -91,6 +95,13 @@ func _update_liquid():
 func get_global_mask_top_y():
 	return mask.to_global(mask.get_rect().position).y + 20
 #endregion
+
+# ingredient_container.gd
+func get_global_x_range() -> Vector2:
+	var r := mask.get_rect()                       # local, already accounts for centering
+	var left := mask.to_global(r.position).x
+	var right := mask.to_global(r.end).x
+	return Vector2(minf(left, right), maxf(left, right))   # x = left, y = right
 
 static func ryb_to_rgb(ryb: Vector3) -> Color:
 	var r := ryb.x

@@ -2,17 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
-[ext_resource type="PackedScene" uid="uid://f6q3hscdopp7" path="res://testing/test_character.tscn" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Mug/Mug.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dfq1i8k4reyxm" path="res://Assets/Sprites/workspace_background.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cei8e0m5y0gmn" path="res://Assets/Sprites/cafe_backdrop.png" id="6_272bh"]
 
 [node name="Main" type="Node2D" unique_id=1694163084]
-
-[node name="CharacterBody2D" parent="." unique_id=1050556539 instance=ExtResource("1_272bh")]
-z_index = -4
-position = Vector2(-61, 29)
-collision_layer = 2
 
 [node name="Mug3" parent="." unique_id=1266183240 instance=ExtResource("4_1bvp3")]
 position = Vector2(192, 846)

@@ -2,27 +2,33 @@ extends Character
 
 func _ready():
 	pre_order_dialog = Dialog.new([
-		#DLine.new("Could I have a medium iced latte please?"),
-		#DLine.new("?", "protag"),
-		#DLine.new("Oh, sorry. That’s just what I usually order."),
-		#DLine.new("What do you guys have? I overslept and my mind’s a mess…"),
-		#DLine.new("I have to clock in in 20 minutes."),
-		#DLine.new("No worries. I just woke up from a nap myself.", "protag"),
-		#DLine.new("The menu’s to your left.", "protag"),
-		#DLine.new("Hmm…"),
-		DLine.new("Then I’ll have an espresso with an electric star.")
+		DLine.new("..."),
+		DLine.new("(She seems a bit creepy.)", "protag"),
+		DLine.new("Hello"),
+		DLine.new("(What is she trying to say)", "protag"),
+		DLine.new("I want a lemon delight."),
+		DLine.new("Ok", "protag"),
+		DLine.new("It seems I can’t even get a good coffee in death."),
+		DLine.new("What do you mean?", "protag"),
+		DLine.new("I’ll explain. Make my drink first"),
+		DLine.new("Have you not noticed? Everyone here is dead."),
+		DLine.new("(Looking back, everyone was a little weird)", "protag"),
+		DLine.new("(What was up with the weird letters?)", "protag"),
+		DLine.new("(And the sirens I heard when I woke up.)", "protag"),
 	])
-	
+
 	evaluation_dialogs = {
-		0.0: Dialog.new([DLine.new("This isn’t what I wanted at all.")]),
-		0.5: Dialog.new([DLine.new("It’s okay…")]),
-		0.9: Dialog.new([DLine.new("Thank you! This is great!")]),
+		0.0: Dialog.new([DLine.new("This is horrendous.")]),
+		0.5: Dialog.new([DLine.new("Not up to par")]),
+		0.9: Dialog.new([DLine.new("This is good. Thanks")]),
 	}
 	
 	order = Order.new(
 	8,
 	{
 		Ingredients.ESPRESSO: 1,
-		Ingredients.MILK: 3
-	}
+		Ingredients.MILK: 1,
+		Ingredients.BLOOD: 1
+	},
+	"lemon"
 )

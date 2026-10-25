@@ -32,5 +32,4 @@ func _ready():
 	8,
 	{
 		Ingredients.MILK: 1
-	}
-)
+	})

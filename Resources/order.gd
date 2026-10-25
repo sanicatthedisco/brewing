@@ -24,5 +24,6 @@ func evaluate_container(container: IngredientContainer) -> float:
 			score = score + (1-error)
 		else:
 			score -= actual_ratio
-	return score / contents.size()
+	score /= contents.size()
+	return clampf(score, 0, score)
 		

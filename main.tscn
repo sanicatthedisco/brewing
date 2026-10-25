@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cn3he6bdr5xei" path="res://Objects/OrderManager.tscn" id="1_w48qg"]
-[ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Objects/Dialogue/Characters/Adam/Adam.tscn" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Glass/Glass.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://scot3pwockud" path="res://Objects/Ingredients/Garnish/ElectricStar.tscn" id="4_w48qg"]
 [ext_resource type="Texture2D" uid="uid://dfq1i8k4reyxm" path="res://Assets/Sprites/Background/workspace_background.png" id="5_7mycd"]
@@ -33,10 +32,15 @@ extends StaticBody2D
 @onready var rim = collider.shape as SegmentShape2D
 "
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0odxb"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1u8w0"]
 resource_local_to_scene = true
 a = Vector2(-1000, 0)
 b = Vector2(1071, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0odxb"]
+resource_local_to_scene = true
+a = Vector2(-187, 0)
+b = Vector2(214, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lswn8"]
 resource_local_to_scene = true
@@ -50,49 +54,48 @@ b = Vector2(214, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xuqvo"]
 resource_local_to_scene = true
-a = Vector2(-187, 0)
-b = Vector2(214, 1)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_qsp4k"]
-resource_local_to_scene = true
 a = Vector2(-198, -1)
 b = Vector2(212.5, 0)
 
 [node name="Main" type="Node2D" unique_id=1694163084]
 
-[node name="OrderManager" parent="." unique_id=1788546562 node_paths=PackedStringArray("serving_mat", "character", "glass") instance=ExtResource("1_w48qg")]
-serving_mat = NodePath("../Garnishes/Surfaces/ServingMat")
-character = NodePath("Adam")
+[node name="OrderManager" parent="." unique_id=1788546562 node_paths=PackedStringArray("serving_mat", "glass") instance=ExtResource("1_w48qg")]
+serving_mat = NodePath("../Surfaces/ServingMat")
 glass = NodePath("../Cups/Glass2")
 
-[node name="Adam" parent="OrderManager" unique_id=1050556539 instance=ExtResource("1_ycdy4")]
-position = Vector2(-138, -23)
-
 [node name="EspressoMachine" parent="." unique_id=1054846614 instance=ExtResource("1_7mycd")]
-position = Vector2(1747, 811.00006)
+position = Vector2(158, 813)
 
 [node name="Cups" type="Node2D" parent="." unique_id=196977630]
 
 [node name="CocktailGlass" parent="Cups" unique_id=1266183240 instance=ExtResource("6_4c57u")]
-position = Vector2(911, 866)
+position = Vector2(232, 453)
 capacity = 4.0
 
 [node name="Carafe" parent="Cups" unique_id=1568535870 instance=ExtResource("6_kek77")]
-position = Vector2(507, 807)
+position = Vector2(458, 867)
 capacity = 16.0
 
 [node name="Glass" parent="Cups" unique_id=731173235 instance=ExtResource("4_1bvp3")]
-position = Vector2(720, 865)
+position = Vector2(-21, 173)
 capacity = 12.0
 starting_fill = 11.0
 starting_ingredient = "Milk"
 
 [node name="Mug" parent="Cups" unique_id=167219955 instance=ExtResource("7_5vw27")]
-position = Vector2(93, 448)
+position = Vector2(-20, 451)
+capacity = 12.0
+
+[node name="Mug" parent="Cups/Mug" unique_id=186446181 instance=ExtResource("7_5vw27")]
+position = Vector2(114, -1)
 capacity = 12.0
 
 [node name="Glass2" parent="Cups" unique_id=1678497719 instance=ExtResource("4_1bvp3")]
-position = Vector2(1133, 882)
+position = Vector2(94, 173)
+capacity = 12.0
+
+[node name="Glass2" parent="Cups/Glass2" unique_id=26179990 instance=ExtResource("4_1bvp3")]
+position = Vector2(119, 0)
 capacity = 12.0
 
 [node name="Background" type="Node2D" parent="." unique_id=1552619822]
@@ -114,7 +117,8 @@ texture = ExtResource("6_272bh")
 metadata/_edit_lock_ = true
 
 [node name="Register" type="Sprite2D" parent="Background" unique_id=774174824]
-position = Vector2(69, 834)
+position = Vector2(1337, 606)
+scale = Vector2(0.8967016, 0.8967016)
 texture = ExtResource("5_ycdy4")
 
 [node name="Plant" type="Sprite2D" parent="Background" unique_id=972104437]
@@ -178,58 +182,59 @@ metadata/_edit_lock_ = true
 [node name="InteractionZone" parent="Garnishes/Eye/InteractionDetector" index="0" unique_id=1632809004]
 metadata/_edit_lock_ = true
 
-[node name="Surfaces" type="Node2D" parent="Garnishes" unique_id=1394636145]
+[node name="Surfaces" type="Node2D" parent="." unique_id=1394636145]
 
-[node name="ServingMat" parent="Garnishes/Surfaces" unique_id=1590663467 instance=ExtResource("7_ycdy4")]
-position = Vector2(1321, 706)
+[node name="ServingMat" parent="Surfaces" unique_id=1590663467 instance=ExtResource("7_ycdy4")]
+z_index = -1
+position = Vector2(861, 704)
 
-[node name="Table" parent="Garnishes/Surfaces" unique_id=1805890429 instance=ExtResource("1_0xm2m")]
+[node name="Table" parent="Surfaces" unique_id=1805890429 instance=ExtResource("1_0xm2m")]
 position = Vector2(928, 988)
 script = SubResource("GDScript_w48qg")
 
-[node name="CollisionShape2D" parent="Garnishes/Surfaces/Table" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_0odxb")
+[node name="CollisionShape2D" parent="Surfaces/Table" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_1u8w0")
 
-[node name="Shelf1" parent="Garnishes/Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
+[node name="Shelf1" parent="Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
 position = Vector2(105, 530)
 script = SubResource("GDScript_w48qg")
 
-[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf1" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_lswn8")
+[node name="CollisionShape2D" parent="Surfaces/Shelf1" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_0odxb")
 
-[node name="Shelf3" parent="Garnishes/Surfaces" unique_id=1016166064 instance=ExtResource("1_0xm2m")]
+[node name="Shelf3" parent="Surfaces" unique_id=1016166064 instance=ExtResource("1_0xm2m")]
 position = Vector2(1789, 246)
 script = SubResource("GDScript_w48qg")
 
-[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf3" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_a6jrf")
+[node name="CollisionShape2D" parent="Surfaces/Shelf3" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_lswn8")
 metadata/_edit_lock_ = true
 
-[node name="Shelf4" parent="Garnishes/Surfaces" unique_id=341765567 instance=ExtResource("1_0xm2m")]
+[node name="Shelf4" parent="Surfaces" unique_id=341765567 instance=ExtResource("1_0xm2m")]
 position = Vector2(1794, 528)
 script = SubResource("GDScript_w48qg")
 
-[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf4" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_xuqvo")
+[node name="CollisionShape2D" parent="Surfaces/Shelf4" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_a6jrf")
 metadata/_edit_lock_ = true
 
-[node name="Shelf2" parent="Garnishes/Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
+[node name="Shelf2" parent="Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
 position = Vector2(114, 240)
 script = SubResource("GDScript_w48qg")
 
-[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf2" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_qsp4k")
+[node name="CollisionShape2D" parent="Surfaces/Shelf2" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_xuqvo")
 
 [node name="Pourable" parent="." unique_id=253281349 instance=ExtResource("23_1u8w0")]
-position = Vector2(229, 165)
+position = Vector2(1781, 884)
 
 [node name="WaterJug" parent="." unique_id=944164172 instance=ExtResource("24_1u8w0")]
-position = Vector2(334, 801)
+position = Vector2(1667, 874)
 
 [editable path="Garnishes/Lemon"]
 [editable path="Garnishes/Eye"]
-[editable path="Garnishes/Surfaces/Table"]
-[editable path="Garnishes/Surfaces/Shelf1"]
-[editable path="Garnishes/Surfaces/Shelf3"]
-[editable path="Garnishes/Surfaces/Shelf4"]
-[editable path="Garnishes/Surfaces/Shelf2"]
+[editable path="Surfaces/Table"]
+[editable path="Surfaces/Shelf1"]
+[editable path="Surfaces/Shelf3"]
+[editable path="Surfaces/Shelf4"]
+[editable path="Surfaces/Shelf2"]

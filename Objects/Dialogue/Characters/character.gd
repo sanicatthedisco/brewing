@@ -10,8 +10,10 @@ var evaluation_dialogs: Dictionary[float, Dialog]
 var order: Order
 
 signal ready_for_order
+signal order_complete
+signal took_drink
 
-enum State {ORDERING, APPEARING, WAITING, EVALUATING}
+enum State {ORDERING, APPEARING, WAITING, EVALUATING, LEAVING}
 var state: State = State.APPEARING
 
 var move_speed = 200.0
@@ -29,6 +31,11 @@ func _physics_process(delta: float) -> void:
 			else:
 				start_npc_dialogue(pre_order_dialog.lines)
 				state = State.ORDERING
+		State.LEAVING:
+			if position.x > target_x:
+				position.x -= move_speed * delta
+			else:
+				order_complete.emit()
 
 
 func start_npc_dialogue(dialog: Array[DLine]) -> void:
@@ -36,9 +43,10 @@ func start_npc_dialogue(dialog: Array[DLine]) -> void:
 	send_dialog(pre_order_dialog)
 
 func recieve_order(item: IngredientContainer):
+	state = State.EVALUATING
 	var score := order.evaluate_container(item)
 	print("Score: ", score)
-	var dialog: Dialog
+	var dialog: Dialog = evaluation_dialogs[0.0]
 	for score_cutoff in evaluation_dialogs:
 		if score >= score_cutoff:
 			dialog = evaluation_dialogs[score_cutoff]
@@ -54,3 +62,7 @@ func _on_dialog_end():
 		State.ORDERING:
 			state = State.WAITING
 			ready_for_order.emit()
+		State.EVALUATING:
+			target_x = 0
+			state = State.LEAVING
+			took_drink.emit()

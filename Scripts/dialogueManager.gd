@@ -5,8 +5,8 @@ signal dialog_complete
 @onready var text_box_scene = preload("res://Objects/Dialogue/text_box.tscn")
 
 enum Speaker {CUSTOMER, PROTAG}
-var customer_pos := Vector2(1200, 400)
-var protag_pos := Vector2(1250, 500)
+var customer_pos := Vector2(1000, 200)
+var protag_pos := customer_pos + Vector2(200, 200)
 
 var dialog: Dialog
 var current_line_index = 0

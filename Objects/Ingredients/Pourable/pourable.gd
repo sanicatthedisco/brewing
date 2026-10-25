@@ -22,8 +22,7 @@ func _ready():
 	spout.area_exited.connect(_on_area_exited)
 	
 	
-func _physics_process(delta):
-	super(delta)
+func _process(delta):
 	if dragging:
 		if pouring:
 			rotation = lerp_angle(rotation, pour_angle * pour_dir, 0.1)

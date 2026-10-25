@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0ap7sq4kyo1g" path="res://Assets/Sprites/glass.png" id="4_1bp4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lafr"]
-size = Vector2(73, 336)
+size = Vector2(73, 163)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmhsy"]
 size = Vector2(147, 200)
@@ -36,7 +36,7 @@ offset_bottom = 289.0
 texture = ExtResource("4_1bp4k")
 
 [node name="CollisionShape2D" parent="PourZone" parent_id_path=PackedInt32Array(806354122) index="0" unique_id=186712206]
-position = Vector2(2.5, -240)
+position = Vector2(2.5, -153.5)
 shape = SubResource("RectangleShape2D_8lafr")
 
 [node name="CollisionShape2D" parent="." index="3" unique_id=1592872759]

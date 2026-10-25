@@ -10,14 +10,22 @@ signal overflow(ing: Ingredient, amount: float)
 var contents: Dictionary[Ingredient, float]
 var content_color: Color
 @export var capacity: float
-@export var fill: float
-
-var floor_rows = PackedInt32Array()
+var fill := 0.0
+@export var starting_fill: float
+@export var starting_ingredient: String
 
 func _ready():
 	super()
 	internal_stream.visible = false
-	add_ingredient(Ingredients.ESPRESSO, 8)
+	var ing: Ingredient
+	if starting_ingredient == Ingredients.MILK.name:
+		ing = Ingredients.MILK
+	elif starting_ingredient == Ingredients.BLOOD.name:
+		ing = Ingredients.BLOOD
+	else:
+		ing = Ingredients.WATER
+	
+	add_ingredient(ing, starting_fill)
 
 func add_ingredient(ing: Ingredient, amount: float) -> void:
 	if ing not in contents:
@@ -27,7 +35,6 @@ func add_ingredient(ing: Ingredient, amount: float) -> void:
 		contents[ing] += amount
 	else:
 		overflow.emit(ing, amount)
-	
 	_update_fill()
 
 func remove_ingredient(ing: Ingredient, amount: float) -> void:
@@ -47,7 +54,6 @@ func _fill_target(target: IngredientContainer, delta: float):
 		var weighted_amount := fill_rate * delta * contents[ing] / fill
 		remove_ingredient(ing, weighted_amount)
 		target.add_ingredient(ing, weighted_amount)
-		print(ing.name, weighted_amount)
 
 func _update_fill() -> void:
 	fill = 0

@@ -1,4 +1,4 @@
-class_name Ingredient
+class_name Ingredient extends Resource
 
 enum State {POWDER, LIQUID}
 

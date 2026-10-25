@@ -4,23 +4,23 @@ signal dialog_complete
 
 @onready var text_box_scene = preload("res://Objects/Dialogue/text_box.tscn")
 
-var dialog_lines: Array[String] = []
+enum Speaker {CUSTOMER, PROTAG}
+var customer_pos := Vector2(1200, 400)
+var protag_pos := Vector2(1250, 500)
+
+var dialog: Dialog
 var current_line_index = 0
 var sfx: AudioStream
 
 var text_box
-var text_box_position: Vector2
-
  
 var is_dialog_active = false
 var can_advance_line = false
 
-func start_dialog(position: Vector2, lines: Array[String], speech_sfx: AudioStream):
+func start_dialog(speaker: Speaker, p_dialog: Dialog, speech_sfx: AudioStream):
 	if is_dialog_active: 
 		return
-	
-	dialog_lines = lines
-	text_box_position = position
+	dialog = p_dialog
 	sfx = speech_sfx
 	_show_text_box()
 	
@@ -33,8 +33,14 @@ func _show_text_box():
 
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
-	text_box.global_position = text_box_position
-	text_box.display_text(dialog_lines[current_line_index], sfx)
+	var line := dialog.lines[current_line_index]
+	match line.speaker:
+		Speaker.CUSTOMER:
+			text_box.global_position = customer_pos
+		Speaker.PROTAG:
+			text_box.global_position = protag_pos
+	
+	text_box.display_text(line.text, sfx)
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
@@ -49,7 +55,7 @@ func _unhandled_input(event):
 		text_box.queue_free()
 		
 		current_line_index += 1
-		if current_line_index >= dialog_lines.size():
+		if current_line_index >= dialog.lines.size():
 			is_dialog_active = false
 			current_line_index = 0
 			dialog_complete.emit()

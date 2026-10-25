@@ -18,8 +18,6 @@ var move_speed = 200.0
 var target_x = 400.0
 var dialogue_started = false
 
-var dialog_pos := Vector2(1200, 400)
-
 func _ready():
 	print(pre_order_dialog)
 
@@ -33,8 +31,7 @@ func _physics_process(delta: float) -> void:
 				state = State.ORDERING
 
 
-@warning_ignore("unused_parameter")
-func start_npc_dialogue(dialog: Array[String]) -> void:
+func start_npc_dialogue(dialog: Array[DLine]) -> void:
 	await get_tree().create_timer(0.2).timeout
 	send_dialog(pre_order_dialog)
 
@@ -49,7 +46,7 @@ func recieve_order(item: IngredientContainer):
 
 func send_dialog(dialog: Dialog):
 	DialogueManager.dialog_complete.connect(_on_dialog_end)
-	DialogueManager.start_dialog(dialog_pos, dialog.lines, speech_sound)
+	DialogueManager.start_dialog(DialogueManager.Speaker.CUSTOMER, dialog, speech_sound)
 
 func _on_dialog_end():
 	DialogueManager.dialog_complete.disconnect(_on_dialog_end)

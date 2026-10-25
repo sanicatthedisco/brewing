@@ -3,6 +3,7 @@ extends Draggable
 
 @export var pour_angle := -90.0
 @export var upright_angle := 0.0
+var ingredient: Ingredient = Ingredients.WATER
 var fill_rate := 3
 
 var pouring := false
@@ -29,8 +30,9 @@ func _physics_process(delta):
 			if abs(rotation_degrees) > abs(pour_angle) * 0.8:
 				if _pour_out_contents(fill_rate * delta):
 					pour_target.update_stream(spout.global_position)
+					_fill_target(pour_target, delta)
 					_update_stream()
-					pour_target.add_ingredient(Ingredients.WATER, fill_rate * delta)
+					
 		else:
 			rotation = lerp_angle(rotation, upright_angle, 0.1)
 	
@@ -44,7 +46,9 @@ func _update_stream():
 
 func _pour_out_contents(amount: float) -> bool:
 	return true
-	
+
+func _fill_target(target: IngredientContainer, delta: float):
+	target.add_ingredient(ingredient, fill_rate * delta)
 
 func _begin_pouring(target: IngredientContainer):
 	pouring = true
@@ -57,7 +61,7 @@ func _begin_pouring(target: IngredientContainer):
 
 func _end_pouring():
 	if (pour_target != null):
-		pour_target.stream.visible = false
+		pour_target.internal_stream.visible = false
 	pouring = false
 	pour_target = null
 	stream.clear_points()
@@ -65,7 +69,6 @@ func _end_pouring():
 
 func _on_area_entered(area: Area2D):
 	if area.name == "PourZone" and not is_ancestor_of(area) and dragging:
-		print("hi")
 		_begin_pouring(area.get_parent())
 
 func _on_area_exited(area):

@@ -8,8 +8,8 @@ radius = 6.0
 
 [node name="Pourable" unique_id=804989589 instance=ExtResource("1_base")]
 script = ExtResource("1_wy2w8")
-pour_angle = null
-upright_angle = null
+pour_angle = -90.0
+upright_angle = 0.0
 
 [node name="Stream" type="Line2D" parent="." index="3" unique_id=433070587]
 top_level = true

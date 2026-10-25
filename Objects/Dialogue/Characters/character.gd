@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 				state = State.ORDERING
 
 
+@warning_ignore("unused_parameter")
 func start_npc_dialogue(dialog: Array[String]) -> void:
 	await get_tree().create_timer(0.2).timeout
 	send_dialog(pre_order_dialog)

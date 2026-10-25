@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djv4uu214k1ac"]
 
 [ext_resource type="Script" uid="uid://dqw1jlgmnp3ap" path="res://Objects/Dialogue/text_box.gd" id="1_1i74w"]
-[ext_resource type="Texture2D" uid="uid://bl50twpgk7kyg" path="res://Assets/Sprites/Dialogue/textbox.png" id="1_k7ve7"]
+[ext_resource type="Texture2D" uid="uid://ce0cj1cbkhv70" path="res://Assets/Sprites/Dialogue/text_bubble3.png" id="2_1i74w"]
 
 [sub_resource type="FontFile" id="FontFile_d0rgj"]
 subpixel_positioning = 0
@@ -30,7 +30,7 @@ script = ExtResource("1_1i74w")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1325003046]
 layout_mode = 2
-texture = ExtResource("1_k7ve7")
+texture = ExtResource("2_1i74w")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 16
 patch_margin_top = 16

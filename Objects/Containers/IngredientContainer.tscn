@@ -8,6 +8,9 @@ size = Vector2(141, 139)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmhsy"]
 size = Vector2(50, 85)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmhsy"]
+radius = 6.0
+
 [node name="IngredientContainer" type="RigidBody2D" unique_id=813111274]
 input_pickable = true
 script = ExtResource("1_372x3")
@@ -26,8 +29,9 @@ offset_top = 158.0
 offset_right = 197.33334
 offset_bottom = 420.0
 mouse_filter = 2
-color = Color(0.18431373, 1, 1, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="InternalStream" type="Line2D" parent="Mask" unique_id=1043421760]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1075338833]
 clip_children = 2
@@ -45,3 +49,12 @@ shape = SubResource("RectangleShape2D_heqi2")
 [node name="InteractionZone" type="CollisionShape2D" parent="InteractionDetector" unique_id=805710803]
 position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_jmhsy")
+
+[node name="Stream" type="Line2D" parent="." unique_id=1849741083]
+top_level = true
+
+[node name="Spout" type="Area2D" parent="." unique_id=751968024]
+position = Vector2(-4, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spout" unique_id=1708787041]
+shape = SubResource("CircleShape2D_jmhsy")

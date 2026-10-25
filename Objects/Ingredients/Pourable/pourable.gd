@@ -1,15 +1,15 @@
+class_name Pourable
 extends Draggable
 
 @export var pour_angle := -90.0
 @export var upright_angle := 0.0
+var ingredient: Ingredient = Ingredients.WATER
 var fill_rate := 3
 
 var pouring := false
 var pour_dir := 1
 
-var max_stream_y: float
 var stream_fall_speed := 500.0
-var stream_made_contact := false
 
 var pour_target: IngredientContainer = null
 
@@ -22,38 +22,36 @@ func _ready():
 	spout.area_exited.connect(_on_area_exited)
 	
 	
-func _physics_process(delta):
-	super(delta)
+func _process(delta):
 	if dragging:
 		if pouring:
 			rotation = lerp_angle(rotation, pour_angle * pour_dir, 0.1)
 			if abs(rotation_degrees) > abs(pour_angle) * 0.8:
-				_update_stream(delta)
-				if stream_made_contact:
-					pour_target.add_ingredient(Ingredients.WATER, fill_rate * delta)
+				if _pour_out_contents(fill_rate * delta):
+					pour_target.update_stream(spout.global_position)
+					_fill_target(pour_target, delta)
+					_update_stream()
+					
 		else:
 			rotation = lerp_angle(rotation, upright_angle, 0.1)
-
-func _update_stream(delta):
-	var stream_y: float
-	var surf_y = pour_target.get_landing_y(spout.global_position.x)
-	if not stream_made_contact:
-		max_stream_y += stream_fall_speed * delta;
-		stream_y = minf(maxf(max_stream_y, spout.global_position.y), surf_y)
-		if stream_y >= surf_y:
-			stream_made_contact = true
-	else:
-		stream_y = surf_y
 	
+func _update_stream():
+	stream.visible = true
 	stream.clear_points()
-	stream.add_point(spout.global_position)
-	stream.add_point(Vector2(spout.global_position.x, stream_y))
+	stream.add_point(stream.to_local(spout.global_position))
+	stream.add_point(stream.to_local(
+		Vector2(spout.global_position.x, pour_target.get_global_mask_top_y()))
+	)
+
+func _pour_out_contents(amount: float) -> bool:
+	return true
+
+func _fill_target(target: IngredientContainer, delta: float):
+	target.add_ingredient(ingredient, fill_rate * delta)
 
 func _begin_pouring(target: IngredientContainer):
 	pouring = true
 	pour_target = target
-	max_stream_y = spout.global_position.y
-	stream_made_contact = false
 	# Change pouring direction based on entered side
 	if global_position.x < pour_target.global_position.x:
 		pour_dir = -1
@@ -61,18 +59,20 @@ func _begin_pouring(target: IngredientContainer):
 		pour_dir = 1
 
 func _end_pouring():
+	if (pour_target != null):
+		pour_target.internal_stream.visible = false
 	pouring = false
 	pour_target = null
 	stream.clear_points()
+	stream.visible = false
 
 func _on_area_entered(area: Area2D):
-	if area.name == "PourZone" and dragging:
+	if area.name == "PourZone" and not is_ancestor_of(area) and dragging:
 		_begin_pouring(area.get_parent())
 
 func _on_area_exited(area):
 	if area.name == "PourZone" and dragging:
 		_end_pouring()
-
 
 func _end_dragging():
 	rotation = upright_angle

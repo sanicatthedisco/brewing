@@ -1,16 +1,27 @@
 [gd_scene format=3 uid="uid://ta5fgdjwgsxi"]
 
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cqm6bwqwolnvf" path="res://Objects/Ingredients/Pourable/Pourable.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Mug/Mug.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dfq1i8k4reyxm" path="res://Assets/Sprites/workspace_background.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cei8e0m5y0gmn" path="res://Assets/Sprites/cafe_backdrop.png" id="6_272bh"]
 
 [node name="Main" type="Node2D" unique_id=1694163084]
 
-[node name="Pourable" parent="." unique_id=804989589 instance=ExtResource("3_h2yge")]
-position = Vector2(1072, 785)
-lock_rotation = false
+[node name="Mug3" parent="." unique_id=1266183240 instance=ExtResource("4_1bvp3")]
+position = Vector2(192, 846)
+capacity = 12.0
+starting_fill = 6.0
+starting_ingredient = "Milk"
+
+[node name="EspressoMachine" parent="." unique_id=1054846614 instance=ExtResource("1_7mycd")]
+position = Vector2(1706.0001, 732.00006)
+
+[node name="Mug2" parent="." unique_id=1679779724 instance=ExtResource("4_1bvp3")]
+position = Vector2(607, 843)
+capacity = 12.0
+starting_fill = 6.0
+starting_ingredient = "Blood"
 
 [node name="Background" type="Node2D" parent="." unique_id=1552619822]
 z_index = -4
@@ -42,6 +53,6 @@ width = 200.0
 position = Vector2(105, 530)
 width = 40.0
 
-[node name="Mug" parent="." unique_id=1266183240 instance=ExtResource("4_1bvp3")]
-position = Vector2(703, 832)
+[node name="Mug" parent="." unique_id=1898041628 instance=ExtResource("4_1bvp3")]
+position = Vector2(1307, 836)
 capacity = 12.0

@@ -13,8 +13,6 @@ upright_angle = 0.0
 
 [node name="Stream" type="Line2D" parent="." index="3" unique_id=433070587]
 top_level = true
-width = 6.0
-default_color = Color(0.1764706, 1, 1, 1)
 
 [node name="Spout" type="Area2D" parent="." index="4" unique_id=340729584]
 position = Vector2(-4, -45)

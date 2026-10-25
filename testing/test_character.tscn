@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://f6q3hscdopp7"]
 
-[ext_resource type="Texture2D" uid="uid://dr5guhpkql6qo" path="res://Assets/Sprites/unifinished_character.png" id="2_0vobd"]
+[ext_resource type="Texture2D" uid="uid://cva8hres8vye0" path="res://Assets/Sprites/char_transparent.png" id="1_4fqcr"]
 
 [sub_resource type="GDScript" id="GDScript_4fqcr"]
 script/source = "
@@ -39,15 +39,11 @@ func start_npc_dialogue() -> void:
 		
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dy1dn"]
-atlas = ExtResource("2_0vobd")
-region = Rect2(0, 0, 717, 1080)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_l0epr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dy1dn")
+"texture": ExtResource("1_4fqcr")
 }],
 "loop": 1,
 "name": &"default",
@@ -58,10 +54,12 @@ animations = [{
 size = Vector2(412, 916)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1050556539]
+collision_mask = 3
 script = SubResource("GDScript_4fqcr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427216875]
 position = Vector2(374, 537)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_l0epr")
 frame_progress = 0.22277889
 

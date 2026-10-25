@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj7t48mjd7vxv"
-path="res://.godot/imported/cup.png-4405838986fcdd104c518234858bb99a.ctex"
+uid="uid://bmofnrcfunynj"
+path="res://.godot/imported/register.png-1ead5fd9b721c8c25bde8ad6cce76a32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/cup.png"
-dest_files=["res://.godot/imported/cup.png-4405838986fcdd104c518234858bb99a.ctex"]
+source_file="res://Assets/Sprites/Background/register.png"
+dest_files=["res://.godot/imported/register.png-1ead5fd9b721c8c25bde8ad6cce76a32.ctex"]
 
 [params]
 

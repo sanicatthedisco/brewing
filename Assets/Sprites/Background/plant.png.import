@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4dli64g70jyu"
-path="res://.godot/imported/bowl_interior.png-bc3d6281437b6eb4892dc85a070470ae.ctex"
+uid="uid://6jnprkiryta7"
+path="res://.godot/imported/plant.png-53ffe87c437d3252c0e34803935e466a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/bowl_interior.png"
-dest_files=["res://.godot/imported/bowl_interior.png-bc3d6281437b6eb4892dc85a070470ae.ctex"]
+source_file="res://Assets/Sprites/Background/plant.png"
+dest_files=["res://.godot/imported/plant.png-53ffe87c437d3252c0e34803935e466a.ctex"]
 
 [params]
 

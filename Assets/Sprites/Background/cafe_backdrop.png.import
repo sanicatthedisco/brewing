@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cei8e0m5y0gmn"
-path="res://.godot/imported/cafe_backdrop.png-00bc3d255b733ea9abf88a2be81ea01b.ctex"
+path="res://.godot/imported/cafe_backdrop.png-aae56caa5265d6bbc0aa5069b20ca9a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/cafe_backdrop.png"
-dest_files=["res://.godot/imported/cafe_backdrop.png-00bc3d255b733ea9abf88a2be81ea01b.ctex"]
+source_file="res://Assets/Sprites/Background/cafe_backdrop.png"
+dest_files=["res://.godot/imported/cafe_backdrop.png-aae56caa5265d6bbc0aa5069b20ca9a1.ctex"]
 
 [params]
 

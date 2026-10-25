@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://py7jurqtm5kd"
-path="res://.godot/imported/cup_mask.png-110f11f2975c83aac11f71d94bfe8ff2.ctex"
+uid="uid://cbtyb6rq435r"
+path="res://.godot/imported/cocktail_glass_mask.png-1f413a5f4526ed9cfdb39ec4d94293fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/cup_mask.png"
-dest_files=["res://.godot/imported/cup_mask.png-110f11f2975c83aac11f71d94bfe8ff2.ctex"]
+source_file="res://Assets/Sprites/Containers/cocktail_glass_mask.png"
+dest_files=["res://.godot/imported/cocktail_glass_mask.png-1f413a5f4526ed9cfdb39ec4d94293fd.ctex"]
 
 [params]
 

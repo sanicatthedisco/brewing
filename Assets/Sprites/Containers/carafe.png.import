@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqes3a3mhg8bc"
-path="res://.godot/imported/flask.png-e2b6e26dee20266185d22a8ce4abf21e.ctex"
+uid="uid://d4k8msrwp6hct"
+path="res://.godot/imported/carafe.png-f9fcceb95ddbd3ebba6313d7bdc44d46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/flask.png"
-dest_files=["res://.godot/imported/flask.png-e2b6e26dee20266185d22a8ce4abf21e.ctex"]
+source_file="res://Assets/Sprites/Containers/carafe.png"
+dest_files=["res://.godot/imported/carafe.png-f9fcceb95ddbd3ebba6313d7bdc44d46.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://digs52bmgkt4l"
-path="res://.godot/imported/table.png-1c1366adec3c0bd92464a1fe6da1281c.ctex"
+uid="uid://3yar053vq70o"
+path="res://.godot/imported/mug_mask.png-840b6f4dde3e7c096d5e810e38753f6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/table.png"
-dest_files=["res://.godot/imported/table.png-1c1366adec3c0bd92464a1fe6da1281c.ctex"]
+source_file="res://Assets/Sprites/Containers/mug_mask.png"
+dest_files=["res://.godot/imported/mug_mask.png-840b6f4dde3e7c096d5e810e38753f6e.ctex"]
 
 [params]
 

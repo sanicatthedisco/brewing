@@ -2,6 +2,7 @@ class_name Order extends Resource
 
 var amount: float
 var contents: Dictionary[Ingredient, float]
+var garnish: 
 
 func _init(p_amount: float, p_contents: Dictionary[Ingredient, float]):
 	amount = p_amount

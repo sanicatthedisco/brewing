@@ -9,6 +9,9 @@ resource_local_to_scene = true
 a = Vector2(-128, 0)
 b = Vector2(132, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u231x"]
+size = Vector2(256, 10)
+
 [node name="ServingMat" unique_id=1590663467 instance=ExtResource("1_yw5ts")]
 script = ExtResource("2_juww8")
 
@@ -17,3 +20,8 @@ texture = ExtResource("2_koc2f")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=375987916]
 shape = SubResource("SegmentShape2D_juww8")
+
+[node name="Detector" type="Area2D" parent="." index="2" unique_id=1617734071]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" index="0" unique_id=2091593903]
+shape = SubResource("RectangleShape2D_u231x")

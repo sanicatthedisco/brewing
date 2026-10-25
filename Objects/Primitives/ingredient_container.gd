@@ -7,6 +7,8 @@ class_name IngredientContainer extends Pourable
 
 signal overflow(ing: Ingredient, amount: float)
 
+var contents_start: Dictionary[Ingredient, float]
+
 var contents: Dictionary[Ingredient, float]
 var content_color: Color
 @export var capacity: float
@@ -28,6 +30,9 @@ func _ready():
 		ing = Ingredients.WATER
 	
 	add_ingredient(ing, starting_fill)
+	
+	for ingr in contents_start:
+		add_ingredient(ingr, contents_start[ingr])
 
 func add_ingredient(ing: Ingredient, amount: float) -> void:
 	if ing not in contents:

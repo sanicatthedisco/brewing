@@ -56,7 +56,6 @@ func _display_letter():
 			
 	 
 func _on_letter_display_timer_timeout():
-	print("Timer triggered!")
 	_display_letter()
 	
 	

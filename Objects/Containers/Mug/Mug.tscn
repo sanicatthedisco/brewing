@@ -11,6 +11,9 @@ size = Vector2(73, 336)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmhsy"]
 size = Vector2(147, 200)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hieh1"]
+size = Vector2(177, 227)
+
 [node name="Mug" unique_id=1266183240 instance=ExtResource("1_8lafr")]
 script = ExtResource("2_1bp4k")
 
@@ -29,8 +32,6 @@ offset_top = 89.0
 offset_right = 76.0
 offset_bottom = 289.0
 
-[node name="Line2D" type="Line2D" parent="Mask" index="1" unique_id=1541922009]
-
 [node name="Sprite2D" parent="." index="1" unique_id=1075338833]
 texture = ExtResource("4_1bp4k")
 
@@ -40,3 +41,10 @@ shape = SubResource("RectangleShape2D_8lafr")
 
 [node name="CollisionShape2D" parent="." index="3" unique_id=1592872759]
 shape = SubResource("RectangleShape2D_jmhsy")
+
+[node name="InteractionZone" parent="InteractionDetector" parent_id_path=PackedInt32Array(69867065) index="0" unique_id=805710803]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_hieh1")
+
+[node name="Spout" parent="." index="6" unique_id=751968024]
+position = Vector2(0, -75)

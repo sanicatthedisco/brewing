@@ -1,8 +1,8 @@
-class_name IngredientContainer
-extends Draggable
+class_name IngredientContainer extends Pourable
 
 @onready var mask: Sprite2D = $Mask
 @onready var liquid: ColorRect = $Mask/Liquid
+@onready var internal_stream: Line2D = $Mask/InternalStream
 @onready var empty_y := liquid.position.y 
 
 signal overflow(ing: Ingredient, amount: float)
@@ -14,7 +14,9 @@ var contents: Dictionary[Ingredient, float]
 var floor_rows = PackedInt32Array()
 
 func _ready():
-	_build_floor_map()
+	super()
+	internal_stream.visible = false
+	add_ingredient(Ingredients.WATER, 8)
 
 func add_ingredient(ing: Ingredient, amount: float) -> void:
 	if ing not in contents:
@@ -24,12 +26,22 @@ func add_ingredient(ing: Ingredient, amount: float) -> void:
 		contents[ing] += amount
 	else:
 		overflow.emit(ing, amount)
+	
 	_update_fill()
 
 func remove_ingredient(ing: Ingredient, amount: float) -> void:
 	assert(ing in contents.keys())
 	assert(contents[ing] >= amount)
 	contents[ing] -= amount
+	
+	_update_fill()
+
+func _pour_out_contents(amount: float) -> bool:
+	if amount > fill:
+		return false
+	for ing in contents:
+		remove_ingredient(ing, amount)
+	return true
 
 func _update_fill() -> void:
 	fill = 0
@@ -38,37 +50,23 @@ func _update_fill() -> void:
 			fill += contents[ingredient]
 	
 	_update_liquid()
-	print(fill)
 
 #region Liquid rendering
 func get_liquid_surface_y():
-	return liquid.global_position.y + 20
+	return liquid.global_position.y
 
-func _build_floor_map():
-	var img := mask.texture.get_image()
-	floor_rows.resize(img.get_width())
-	for x in img.get_width():
-		floor_rows[x] = -1                       # -1 means "no interior in this column"
-		for y in range(img.get_height() - 1, -1, -1):   # scan bottom to top
-			if img.get_pixel(x, y).a > 0.5:
-				floor_rows[x] = y
-				break
-
-func get_landing_y(world_x: float) -> float:
-	# world x -> pixel column in the texture
-	var local_x := mask.to_local(Vector2(world_x, 0.0)).x
-	var col := int(local_x + mask.texture.get_width() * 0.5)
-	if col < 0 or col >= floor_rows.size() or floor_rows[col] < 0:
-		return get_liquid_surface_y()
-
-	# pixel row -> world y
-	var floor_local_y = floor_rows[col] - mask.texture.get_height() * 0.5
-	var floor_world_y := mask.to_global(Vector2(0.0, floor_local_y)).y
-
-	return minf(get_liquid_surface_y(), floor_world_y)
+func update_stream(spout_pos: Vector2):
+	var local_pos = internal_stream.to_local(spout_pos)
+	internal_stream.visible = true
+	internal_stream.clear_points()
+	internal_stream.add_point(Vector2(local_pos.x, get_liquid_surface_y()))
+	internal_stream.add_point(local_pos)
 
 func _update_liquid():
 	if not is_node_ready():
 		return
 	liquid.position.y = empty_y - liquid.size.y * (fill / capacity)
+	
+func get_global_mask_top_y():
+	return mask.to_global(mask.get_rect().position).y + 20
 #endregion

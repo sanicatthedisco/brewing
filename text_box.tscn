@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjifq5mdx1jm0"]
 
 [ext_resource type="Script" uid="uid://dqw1jlgmnp3ap" path="res://Objects/Dialogue/text_box.gd" id="1_d0rgj"]
-[ext_resource type="Texture2D" uid="uid://bl50twpgk7kyg" path="res://Assets/Sprites/Dialogue/textbox.png" id="2_d0rgj"]
+[ext_resource type="Texture2D" uid="uid://ce0cj1cbkhv70" path="res://Assets/Sprites/Dialogue/text_bubble3.png" id="2_d0rgj"]
 
 [sub_resource type="FontFile" id="FontFile_d0rgj"]
 subpixel_positioning = 0
@@ -33,10 +33,10 @@ script = ExtResource("1_d0rgj")
 layout_mode = 2
 texture = ExtResource("2_d0rgj")
 region_rect = Rect2(0, 0, 48, 48)
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=405556392]
 layout_mode = 2
@@ -47,7 +47,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="Label" type="Label" parent="MarginContainer" unique_id=1311246847]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.02988342, 0.15077004, 0.54191595, 1)
+theme_override_colors/font_color = Color(0.35990745, 0.13055974, 0.005570172, 1)
 theme_override_fonts/font = SubResource("FontFile_d0rgj")
 vertical_alignment = 1
 
@@ -57,3 +57,5 @@ zoom = Vector2(18, 18)
 
 [node name="LetterDisplayTimer" type="Timer" parent="." unique_id=1240918357]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1822099123]

@@ -1,7 +1,7 @@
 class_name Character extends CharacterBody2D
 
 @export var pre_order_dialogue: Array[String]
-
+@export var speech_sound = preload("res://Assets/sounds/dandys-world-classic-text-box-sound.mp3")
 @export var post_order_dialogue: Array[String]
 
 var move_speed = 200.0
@@ -21,6 +21,7 @@ func start_npc_dialogue() -> void:
 	DialogueManager.start_dialog(
 		#global_position + Vector2(100, -100),
 		#dialogue_lines,
-		Vector2(1200, 400),
+		Vector2(1000, 500),
 		pre_order_dialogue,
+		speech_sound,
 	)

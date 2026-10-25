@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djv4uu214k1ac"]
 
+[ext_resource type="Script" uid="uid://dqw1jlgmnp3ap" path="res://Objects/Dialogue/text_box.gd" id="1_1i74w"]
 [ext_resource type="Texture2D" uid="uid://bl50twpgk7kyg" path="res://Assets/Sprites/Dialogue/textbox.png" id="1_k7ve7"]
 
 [sub_resource type="FontFile" id="FontFile_d0rgj"]
@@ -25,6 +26,7 @@ cache/0/16/0/scale = 1.0
 offset_top = -3.0
 offset_right = 55.0
 offset_bottom = 39.0
+script = ExtResource("1_1i74w")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1325003046]
 layout_mode = 2
@@ -48,8 +50,9 @@ theme_override_colors/font_color = Color(0.02988342, 0.15077004, 0.54191595, 1)
 theme_override_fonts/font = SubResource("FontFile_d0rgj")
 vertical_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="MarginContainer/Label" unique_id=594125594]
-position = Vector2(20, 9)
-zoom = Vector2(8, 8)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=729566560]
+
+[node name="LetterDisplayTimer" type="Timer" parent="." unique_id=1423460219]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

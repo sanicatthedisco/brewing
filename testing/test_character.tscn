@@ -1,8 +1,43 @@
 [gd_scene format=3 uid="uid://f6q3hscdopp7"]
 
-[ext_resource type="Script" uid="uid://dqmnwdhq534tf" path="res://testing/test_character.gd" id="1_fksbf"]
 [ext_resource type="Texture2D" uid="uid://dr5guhpkql6qo" path="res://Assets/Sprites/unifinished_character.png" id="2_0vobd"]
-[ext_resource type="Script" uid="uid://dhq2etdhriet1" path="res://testing/dialog_box.gd" id="3_dy1dn"]
+
+[sub_resource type="GDScript" id="GDScript_4fqcr"]
+script/source = "
+extends CharacterBody2D
+
+var dialogue_lines: Array[String] = [
+	\"hey\",
+	\"Wanna Sper\",
+    \"ssfkdjd djdd\"
+]
+	
+
+var move_speed = 200.0
+var target_x = 400.0
+var dialogue_started = false
+
+
+
+
+func _physics_process(delta: float) -> void:
+	if position.x < target_x:
+		position.x += move_speed * delta
+	elif not dialogue_started:
+		dialogue_started = true
+		start_npc_dialogue()
+		
+func start_npc_dialogue() -> void:
+	await get_tree().create_timer(2.0).timeout
+
+	DialogueManager.start_dialog(
+		#global_position + Vector2(100, -100),
+		#dialogue_lines,
+		Vector2(1200, 400),
+		dialogue_lines,
+	)
+		
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dy1dn"]
 atlas = ExtResource("2_0vobd")
@@ -22,38 +57,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ickja"]
 size = Vector2(412, 916)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5g8g8"]
-radius = 73.24616
-
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1050556539]
-script = ExtResource("1_fksbf")
-walk_speed = null
+script = SubResource("GDScript_4fqcr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427216875]
+position = Vector2(374, 537)
 sprite_frames = SubResource("SpriteFrames_l0epr")
-frame_progress = 0.6351145
+frame_progress = 0.22277889
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975426209]
-position = Vector2(-2, -29)
+position = Vector2(368, 533)
 shape = SubResource("RectangleShape2D_ickja")
 
-[node name="Area2D(interacting_area)" type="Area2D" parent="." unique_id=247217676]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D(interacting_area)" unique_id=660766607]
-position = Vector2(-4, -2)
-shape = SubResource("CircleShape2D_5g8g8")
-
-[node name="dialogBox" type="CanvasLayer" parent="." unique_id=2092479040]
-script = ExtResource("3_dy1dn")
-
-[node name="Panel" type="Panel" parent="dialogBox" unique_id=359821917]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="dialogBox/Panel" unique_id=327777368]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=275994210]
-position = Vector2(592, -3)
+top_level = true
+position = Vector2(971, 544)

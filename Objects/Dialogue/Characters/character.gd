@@ -48,7 +48,7 @@ func recieve_order(item: IngredientContainer):
 
 func send_dialog(dialog: Dialog):
 	DialogueManager.dialog_complete.connect(_on_dialog_end)
-	DialogueManager.start_dialog(dialog_pos, dialog.lines)
+	DialogueManager.start_dialog(dialog_pos, dialog.lines, speech_sound)
 
 func _on_dialog_end():
 	DialogueManager.dialog_complete.disconnect(_on_dialog_end)
@@ -56,4 +56,3 @@ func _on_dialog_end():
 		State.ORDERING:
 			state = State.WAITING
 			ready_for_order.emit()
-

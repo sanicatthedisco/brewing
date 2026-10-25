@@ -1,6 +1,8 @@
 extends Node
 
-@onready var text_box_scene = preload("res://Assets/Sprites/Dialogue/text_bubble3.png")
+signal dialog_complete
+
+@onready var text_box_scene = preload("res://Objects/Dialogue/text_box.tscn")
 
 var dialog_lines: Array[String] = []
 var current_line_index = 0
@@ -50,5 +52,6 @@ func _unhandled_input(event):
 		if current_line_index >= dialog_lines.size():
 			is_dialog_active = false
 			current_line_index = 0
+			dialog_complete.emit()
 			return
 		_show_text_box()	

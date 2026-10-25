@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cn3he6bdr5xei" path="res://Objects/OrderManager.tscn" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Objects/Dialogue/Characters/Adam/Adam.tscn" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Glass/Glass.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://scot3pwockud" path="res://Objects/Ingredients/Garnish/ElectricStar.tscn" id="4_w48qg"]
 [ext_resource type="Texture2D" uid="uid://dfq1i8k4reyxm" path="res://Assets/Sprites/Background/workspace_background.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bmofnrcfunynj" path="res://Assets/Sprites/Background/register.png" id="5_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://vmjc688b2ks7" path="res://Objects/Containers/CocktailGlass/CocktailGlass.tscn" id="6_4c57u"]
@@ -12,8 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://dfg1byrkdy3op" path="res://Objects/Containers/Carafe/Carafe.tscn" id="6_kek77"]
 [ext_resource type="Texture2D" uid="uid://6jnprkiryta7" path="res://Assets/Sprites/Background/plant.png" id="6_w48qg"]
 [ext_resource type="PackedScene" uid="uid://bxwwh5nnj0q6l" path="res://Objects/Containers/Mug/Mug.tscn" id="7_5vw27"]
-[ext_resource type="PackedScene" uid="uid://cqewiqo7um75c" path="res://Objects/Ingredients/Garnish/Garnish.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://c6bwtj5eawols" path="res://Objects/Surfaces/ServingMat.tscn" id="7_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://cqewiqo7um75c" path="res://Objects/Ingredients/Garnish/Garnish.tscn" id="14_yaehf"]
+[ext_resource type="Texture2D" uid="uid://bc3dvij0t7tme" path="res://Assets/Sprites/Ingredients/lemon.png" id="15_074og"]
+[ext_resource type="Texture2D" uid="uid://doijvupi5m15o" path="res://Assets/Sprites/Ingredients/sugar.png" id="16_d13ii"]
+[ext_resource type="Texture2D" uid="uid://i736vs80mfwu" path="res://Assets/Sprites/Ingredients/eye.png" id="17_cegan"]
+[ext_resource type="Texture2D" uid="uid://bfqd5obi70vn" path="res://Assets/Sprites/Ingredients/star_jar.png" id="18_getpj"]
+[ext_resource type="Texture2D" uid="uid://b36apt5hyaqb" path="res://Assets/Sprites/Ingredients/eye_jar.png" id="19_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cy2ndlmmggfns" path="res://Assets/Sprites/Ingredients/red_vial.png" id="20_d13ii"]
+[ext_resource type="Texture2D" uid="uid://byxekc767w1ut" path="res://Assets/Sprites/Ingredients/lemon_jar.png" id="21_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://c4mh6ili2a8jw" path="res://Objects/Containers/MilkCarton/MilkCarton.tscn" id="23_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://bprdunq5uot7" path="res://Objects/Containers/WaterJug/WaterJug.tscn" id="24_1u8w0"]
 
 [sub_resource type="GDScript" id="GDScript_w48qg"]
 script/source = "@tool
@@ -23,17 +33,27 @@ extends StaticBody2D
 @onready var rim = collider.shape as SegmentShape2D
 "
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_w48qg"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0odxb"]
 resource_local_to_scene = true
 a = Vector2(-1000, 0)
 b = Vector2(1071, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_vivmo"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lswn8"]
 resource_local_to_scene = true
 a = Vector2(-187, 0)
 b = Vector2(214, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2cqfq"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a6jrf"]
+resource_local_to_scene = true
+a = Vector2(-187, 0)
+b = Vector2(214, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xuqvo"]
+resource_local_to_scene = true
+a = Vector2(-187, 0)
+b = Vector2(214, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qsp4k"]
 resource_local_to_scene = true
 a = Vector2(-198, -1)
 b = Vector2(212.5, 0)
@@ -41,7 +61,7 @@ b = Vector2(212.5, 0)
 [node name="Main" type="Node2D" unique_id=1694163084]
 
 [node name="OrderManager" parent="." unique_id=1788546562 node_paths=PackedStringArray("serving_mat", "character", "glass") instance=ExtResource("1_w48qg")]
-serving_mat = NodePath("../Surfaces/ServingMat")
+serving_mat = NodePath("../Garnishes/Surfaces/ServingMat")
 character = NodePath("Adam")
 glass = NodePath("../Cups/Glass2")
 
@@ -49,59 +69,7 @@ glass = NodePath("../Cups/Glass2")
 position = Vector2(-138, -23)
 
 [node name="EspressoMachine" parent="." unique_id=1054846614 instance=ExtResource("1_7mycd")]
-position = Vector2(1706.0001, 732.00006)
-
-[node name="Background" type="Node2D" parent="." unique_id=1552619822]
-z_index = -4
-metadata/_edit_lock_ = true
-
-[node name="CafeBackdrop" type="Sprite2D" parent="Background" unique_id=446180653]
-position = Vector2(-85, 4)
-scale = Vector2(1.0549021, 1.054902)
-texture = ExtResource("5_7mycd")
-centered = false
-metadata/_edit_lock_ = true
-
-[node name="Workspace" type="Sprite2D" parent="Background" unique_id=1154507314]
-z_index = -1
-position = Vector2(867, 380)
-scale = Vector2(0.73529416, 0.7352941)
-texture = ExtResource("6_272bh")
-metadata/_edit_lock_ = true
-
-[node name="Register" type="Sprite2D" parent="Background" unique_id=774174824]
-position = Vector2(160, 842)
-texture = ExtResource("5_ycdy4")
-
-[node name="Plant" type="Sprite2D" parent="Background" unique_id=972104437]
-position = Vector2(589, 571)
-texture = ExtResource("6_w48qg")
-
-[node name="Surfaces" type="Node2D" parent="." unique_id=1394636145]
-
-[node name="ServingMat" parent="Surfaces" unique_id=1590663467 instance=ExtResource("7_ycdy4")]
-position = Vector2(1321, 706)
-
-[node name="Table" parent="Surfaces" unique_id=1805890429 instance=ExtResource("1_0xm2m")]
-position = Vector2(928, 988)
-script = SubResource("GDScript_w48qg")
-
-[node name="CollisionShape2D" parent="Surfaces/Table" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_w48qg")
-
-[node name="Shelf1" parent="Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
-position = Vector2(105, 530)
-script = SubResource("GDScript_w48qg")
-
-[node name="CollisionShape2D" parent="Surfaces/Shelf1" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_vivmo")
-
-[node name="Shelf2" parent="Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
-position = Vector2(114, 240)
-script = SubResource("GDScript_w48qg")
-
-[node name="CollisionShape2D" parent="Surfaces/Shelf2" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_2cqfq")
+position = Vector2(1747, 811.00006)
 
 [node name="Cups" type="Node2D" parent="." unique_id=196977630]
 
@@ -127,9 +95,141 @@ capacity = 12.0
 position = Vector2(1133, 882)
 capacity = 12.0
 
-[node name="Garnish" parent="." unique_id=804989589 instance=ExtResource("7_272bh")]
-position = Vector2(237, 460)
+[node name="Background" type="Node2D" parent="." unique_id=1552619822]
+z_index = -4
+metadata/_edit_lock_ = true
 
-[editable path="Surfaces/Table"]
-[editable path="Surfaces/Shelf1"]
-[editable path="Surfaces/Shelf2"]
+[node name="CafeBackdrop" type="Sprite2D" parent="Background" unique_id=446180653]
+position = Vector2(-85, 4)
+scale = Vector2(1.0549021, 1.054902)
+texture = ExtResource("5_7mycd")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Workspace" type="Sprite2D" parent="Background" unique_id=1154507314]
+z_index = -1
+position = Vector2(867, 380)
+scale = Vector2(0.73529416, 0.7352941)
+texture = ExtResource("6_272bh")
+metadata/_edit_lock_ = true
+
+[node name="Register" type="Sprite2D" parent="Background" unique_id=774174824]
+position = Vector2(69, 834)
+texture = ExtResource("5_ycdy4")
+
+[node name="Plant" type="Sprite2D" parent="Background" unique_id=972104437]
+position = Vector2(589, 571)
+texture = ExtResource("6_w48qg")
+
+[node name="StarJar" type="Sprite2D" parent="Background" unique_id=460346088]
+position = Vector2(1791, 183)
+texture = ExtResource("18_getpj")
+
+[node name="EyeJar" type="Sprite2D" parent="Background" unique_id=1011431936]
+position = Vector2(1670, 185)
+texture = ExtResource("19_ryguw")
+
+[node name="RedVial" type="Sprite2D" parent="Background" unique_id=2066653965]
+position = Vector2(1814, 486)
+texture = ExtResource("20_d13ii")
+
+[node name="LemonJar" type="Sprite2D" parent="Background" unique_id=355056504]
+position = Vector2(1930, 172)
+texture = ExtResource("21_1u8w0")
+
+[node name="Sugar" type="Sprite2D" parent="Background" unique_id=39661115]
+position = Vector2(1928, 463)
+texture = ExtResource("16_d13ii")
+
+[node name="Garnishes" type="Node2D" parent="." unique_id=1063011574]
+
+[node name="Lemon" parent="Garnishes" unique_id=804989589 instance=ExtResource("14_yaehf")]
+position = Vector2(1898, 208)
+
+[node name="Sprite2D" parent="Garnishes/Lemon" index="0" unique_id=1537178962]
+texture = ExtResource("15_074og")
+metadata/_edit_lock_ = true
+
+[node name="PhysicsCollider" parent="Garnishes/Lemon" index="1" unique_id=1515525844]
+metadata/_edit_lock_ = true
+
+[node name="InteractionDetector" parent="Garnishes/Lemon" index="2" unique_id=790295964]
+metadata/_edit_lock_ = true
+
+[node name="InteractionZone" parent="Garnishes/Lemon/InteractionDetector" index="0" unique_id=1632809004]
+metadata/_edit_lock_ = true
+
+[node name="ElectricStar" parent="Garnishes" unique_id=1785025594 instance=ExtResource("4_w48qg")]
+position = Vector2(1761, 210)
+
+[node name="Eye" parent="Garnishes" unique_id=1897579391 instance=ExtResource("14_yaehf")]
+position = Vector2(1685, 212)
+
+[node name="Sprite2D" parent="Garnishes/Eye" index="0" unique_id=1537178962]
+texture = ExtResource("17_cegan")
+metadata/_edit_lock_ = true
+
+[node name="PhysicsCollider" parent="Garnishes/Eye" index="1" unique_id=1515525844]
+metadata/_edit_lock_ = true
+
+[node name="InteractionDetector" parent="Garnishes/Eye" index="2" unique_id=790295964]
+metadata/_edit_lock_ = true
+
+[node name="InteractionZone" parent="Garnishes/Eye/InteractionDetector" index="0" unique_id=1632809004]
+metadata/_edit_lock_ = true
+
+[node name="Surfaces" type="Node2D" parent="Garnishes" unique_id=1394636145]
+
+[node name="ServingMat" parent="Garnishes/Surfaces" unique_id=1590663467 instance=ExtResource("7_ycdy4")]
+position = Vector2(1321, 706)
+
+[node name="Table" parent="Garnishes/Surfaces" unique_id=1805890429 instance=ExtResource("1_0xm2m")]
+position = Vector2(928, 988)
+script = SubResource("GDScript_w48qg")
+
+[node name="CollisionShape2D" parent="Garnishes/Surfaces/Table" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_0odxb")
+
+[node name="Shelf1" parent="Garnishes/Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
+position = Vector2(105, 530)
+script = SubResource("GDScript_w48qg")
+
+[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf1" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_lswn8")
+
+[node name="Shelf3" parent="Garnishes/Surfaces" unique_id=1016166064 instance=ExtResource("1_0xm2m")]
+position = Vector2(1789, 246)
+script = SubResource("GDScript_w48qg")
+
+[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf3" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_a6jrf")
+metadata/_edit_lock_ = true
+
+[node name="Shelf4" parent="Garnishes/Surfaces" unique_id=341765567 instance=ExtResource("1_0xm2m")]
+position = Vector2(1794, 528)
+script = SubResource("GDScript_w48qg")
+
+[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf4" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_xuqvo")
+metadata/_edit_lock_ = true
+
+[node name="Shelf2" parent="Garnishes/Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
+position = Vector2(114, 240)
+script = SubResource("GDScript_w48qg")
+
+[node name="CollisionShape2D" parent="Garnishes/Surfaces/Shelf2" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_qsp4k")
+
+[node name="Pourable" parent="." unique_id=253281349 instance=ExtResource("23_1u8w0")]
+position = Vector2(229, 165)
+
+[node name="WaterJug" parent="." unique_id=944164172 instance=ExtResource("24_1u8w0")]
+position = Vector2(334, 801)
+
+[editable path="Garnishes/Lemon"]
+[editable path="Garnishes/Eye"]
+[editable path="Garnishes/Surfaces/Table"]
+[editable path="Garnishes/Surfaces/Shelf1"]
+[editable path="Garnishes/Surfaces/Shelf3"]
+[editable path="Garnishes/Surfaces/Shelf4"]
+[editable path="Garnishes/Surfaces/Shelf2"]

@@ -3,7 +3,7 @@ extends Draggable
 
 @export var pour_angle := -90.0
 @export var upright_angle := 0.0
-var ingredient: Ingredient = Ingredients.WATER
+var ingredient: Ingredient = Ingredients.MILK
 var fill_rate := 3
 
 var pouring := false
@@ -58,6 +58,7 @@ func _fill_target(target: IngredientContainer, delta: float):
 	target.add_ingredient(ingredient, fill_rate * delta)
 
 func _begin_pouring(target: IngredientContainer):
+	stream.default_color = ingredient.color
 	pouring = true
 	pour_target = target
 	# Change pouring direction based on entered side

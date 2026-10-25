@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ikjy4mnpaaki"]
 
 [ext_resource type="Script" uid="uid://drhhww2v0s1ft" path="res://Objects/letter/letter.gd" id="1_nvrc8"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/recipes/recipes.png" id="2_5na8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ickja"]
 size = Vector2(333, 188)
@@ -18,6 +17,5 @@ shape = SubResource("RectangleShape2D_ickja")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1880717458]
 position = Vector2(335.5, 196.5)
 scale = Vector2(1.2509223, 1.2808218)
-texture = ExtResource("2_5na8h")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

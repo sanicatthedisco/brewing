@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func start_npc_dialogue(dialog: Array[String]) -> void:
 	await get_tree().create_timer(0.2).timeout
-	send_dialog(pre_ordera_dialog)
+	send_dialog(pre_order_dialog)
 
 func recieve_order(item: IngredientContainer):
 	var score := order.evaluate_container(item)

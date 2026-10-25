@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjifq5mdx1jm0"]
 
 [ext_resource type="Script" uid="uid://dqw1jlgmnp3ap" path="res://Objects/Dialogue/text_box.gd" id="1_d0rgj"]
-[ext_resource type="Texture2D" uid="uid://cmo6s3ottpmlx" path="res://Assets/Sprites/text_bubble.png" id="2_d0rgj"]
+[ext_resource type="Texture2D" uid="uid://bl50twpgk7kyg" path="res://Assets/Sprites/Dialogue/textbox.png" id="2_d0rgj"]
 
 [sub_resource type="FontFile" id="FontFile_d0rgj"]
 subpixel_positioning = 0

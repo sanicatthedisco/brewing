@@ -11,6 +11,7 @@ size = Vector2(50, 49)
 
 [node name="Garnish" unique_id=804989589 instance=ExtResource("1_06cnr")]
 script = ExtResource("2_62bbn")
+garnish_name = ""
 
 [node name="Sprite2D" parent="." index="0" unique_id=1537178962]
 texture = SubResource("PlaceholderTexture2D_62bbn")

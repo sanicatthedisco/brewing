@@ -22,7 +22,7 @@ func _ready():
 	order = Order.new(
 	8,
 	{
-		Ingredients.ESPRESSO: 1,
-		Ingredients.MILK: 3
-	}
+		Ingredients.ESPRESSO: 1
+	},
+	"electric_star"
 )

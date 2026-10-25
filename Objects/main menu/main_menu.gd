@@ -7,4 +7,4 @@ func _ready() -> void:
 
 
 func _on_button_start_pressed() -> void:
-	get.tree().change_scene_to_file("res://main.tscn") # Replace with function body.
+	pass # Replace with function body.

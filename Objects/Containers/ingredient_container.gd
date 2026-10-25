@@ -8,8 +8,8 @@ extends Draggable
 signal overflow(ing: Ingredient, amount: float)
 
 var contents: Dictionary[Ingredient, float]
-var capacity: float
-var fill: float
+@export var capacity: float
+@export var fill: float
 
 var floor_rows = PackedInt32Array()
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6it1n3pg504y"
-path="res://.godot/imported/Cafe Backdrop 1980x1020.png-6ae9e39adb4b2f759c66edb2a0478826.ctex"
+uid="uid://bvktbpv4fxnok"
+path="res://.godot/imported/glass_mask.png-3f482063e5e922769d6cffd3bef823e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Ingredients/Pourable/Cafe Backdrop 1980x1020.png"
-dest_files=["res://.godot/imported/Cafe Backdrop 1980x1020.png-6ae9e39adb4b2f759c66edb2a0478826.ctex"]
+source_file="res://Assets/Sprites/glass_mask.png"
+dest_files=["res://.godot/imported/glass_mask.png-3f482063e5e922769d6cffd3bef823e4.ctex"]
 
 [params]
 

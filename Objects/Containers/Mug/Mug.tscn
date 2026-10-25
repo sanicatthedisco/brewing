@@ -2,39 +2,41 @@
 
 [ext_resource type="PackedScene" uid="uid://bja0ul5y8rw5k" path="res://Objects/Containers/IngredientContainer.tscn" id="1_8lafr"]
 [ext_resource type="Script" uid="uid://dw5sik16gkox5" path="res://Objects/Containers/Mug/mug.gd" id="2_1bp4k"]
-[ext_resource type="Texture2D" uid="uid://py7jurqtm5kd" path="res://Assets/Sprites/cup_mask.png" id="2_5y0h7"]
-[ext_resource type="Texture2D" uid="uid://dj7t48mjd7vxv" path="res://Assets/Sprites/cup.png" id="3_1bp4k"]
+[ext_resource type="Texture2D" uid="uid://bvktbpv4fxnok" path="res://Assets/Sprites/glass_mask.png" id="3_5y0h7"]
+[ext_resource type="Texture2D" uid="uid://0ap7sq4kyo1g" path="res://Assets/Sprites/glass.png" id="4_1bp4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lafr"]
-size = Vector2(104, 309)
+size = Vector2(73, 336)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmhsy"]
-size = Vector2(184, 210)
+size = Vector2(147, 200)
 
 [node name="Mug" unique_id=1266183240 instance=ExtResource("1_8lafr")]
 script = ExtResource("2_1bp4k")
 
 [node name="Mask" parent="." index="0" unique_id=1087823141]
 clip_children = 1
-texture = ExtResource("2_5y0h7")
+texture = ExtResource("3_5y0h7")
 
 [node name="Liquid" parent="Mask" index="0" unique_id=911795064]
-anchor_left = 0.26266655
-anchor_top = -0.48025584
-anchor_right = 0.26266655
-anchor_bottom = -0.48025584
-offset_left = -193.66664
-offset_top = 206.0
-offset_right = -6.666641
-offset_bottom = 423.255
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -73.0
+offset_top = 89.0
+offset_right = 76.0
+offset_bottom = 289.0
+
+[node name="Line2D" type="Line2D" parent="Mask" index="1" unique_id=1541922009]
 
 [node name="Sprite2D" parent="." index="1" unique_id=1075338833]
-texture = ExtResource("3_1bp4k")
+texture = ExtResource("4_1bp4k")
 
 [node name="CollisionShape2D" parent="PourZone" parent_id_path=PackedInt32Array(806354122) index="0" unique_id=186712206]
-position = Vector2(-34, -253.5)
+position = Vector2(2.5, -240)
 shape = SubResource("RectangleShape2D_8lafr")
 
 [node name="CollisionShape2D" parent="." index="3" unique_id=1592872759]
-position = Vector2(-30, 1)
 shape = SubResource("RectangleShape2D_jmhsy")

@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://chxk2ct451rqe"]
 
-[ext_resource type="Texture2D" uid="uid://digs52bmgkt4l" path="res://Assets/Sprites/table.png" id="1_3hms5"]
+[ext_resource type="Script" uid="uid://c6ovbnh50go12" path="res://Objects/table.gd" id="1_3hms5"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_u231x"]
-a = Vector2(-383, 0)
-b = Vector2(378, 1)
+resource_local_to_scene = true
+b = Vector2(0, 0)
 
 [node name="Table" type="StaticBody2D" unique_id=1590663467]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1666088600]
-texture = ExtResource("1_3hms5")
+script = ExtResource("1_3hms5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=375987916]
 shape = SubResource("SegmentShape2D_u231x")

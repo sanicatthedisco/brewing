@@ -12,13 +12,14 @@ size = Vector2(264.16666, 118.333336)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfmwq"]
 size = Vector2(67.5, 80.000015)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_05ich"]
+resource_local_to_scene = true
+a = Vector2(-113.16666, -2.6666794)
+b = Vector2(100.166664, 0.6666565)
+
 [node name="EspressoMachine" type="Area2D" unique_id=2007455235]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_71w4y")
-
-[node name="Platform" parent="." unique_id=1590663467 instance=ExtResource("5_05ich")]
-position = Vector2(-16, 116.00001)
-width = 100.0
 
 [node name="Body" type="Sprite2D" parent="." unique_id=20073257]
 texture = ExtResource("1_g5xva")
@@ -47,3 +48,11 @@ top_level = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContainerArea" unique_id=1030256293]
 position = Vector2(-14.583335, 83.333336)
 shape = SubResource("RectangleShape2D_cfmwq")
+
+[node name="Platform" parent="ContainerArea/CollisionShape2D" unique_id=1590663467 instance=ExtResource("5_05ich")]
+position = Vector2(-1.4166651, 32.66667)
+
+[node name="CollisionShape2D" parent="ContainerArea/CollisionShape2D/Platform" index="0" unique_id=375987916]
+shape = SubResource("SegmentShape2D_05ich")
+
+[editable path="ContainerArea/CollisionShape2D/Platform"]

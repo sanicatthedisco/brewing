@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1a6mjiaycwo4" path="res://Assets/Sprites/espresso_machine.png" id="1_g5xva"]
 [ext_resource type="Texture2D" uid="uid://dab8xo2jbvx8a" path="res://Assets/Sprites/espresso_machine_handle.png" id="2_gy2wy"]
 [ext_resource type="Texture2D" uid="uid://buwb564joj1ll" path="res://Assets/Sprites/espresso_machine_pressed.png" id="3_ukiwb"]
-[ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="5_05ich"]
+[ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Surfaces/Table.tscn" id="5_05ich"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u231x"]
 size = Vector2(264.16666, 118.333336)

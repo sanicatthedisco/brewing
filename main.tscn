@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ta5fgdjwgsxi"]
 
-[ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Surfaces/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Objects/Dialogue/Characters/Adam/Adam.tscn" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Glass/Glass.tscn" id="4_1bvp3"]
@@ -12,24 +12,27 @@
 [ext_resource type="Texture2D" uid="uid://6jnprkiryta7" path="res://Assets/Sprites/Background/plant.png" id="6_w48qg"]
 [ext_resource type="PackedScene" uid="uid://bxwwh5nnj0q6l" path="res://Objects/Containers/Mug/Mug.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cqewiqo7um75c" path="res://Objects/Ingredients/Garnish/Garnish.tscn" id="7_272bh"]
-[ext_resource type="Texture2D" uid="uid://btss0ywt6fxu6" path="res://Assets/Sprites/Background/serving_mat.png" id="8_vivmo"]
+[ext_resource type="PackedScene" uid="uid://c6bwtj5eawols" path="res://Objects/Surfaces/ServingMat.tscn" id="7_ycdy4"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ycdy4"]
+[sub_resource type="GDScript" id="GDScript_w48qg"]
+script/source = "@tool
+extends StaticBody2D
+
+@onready var collider: CollisionShape2D = $CollisionShape2D
+@onready var rim = collider.shape as SegmentShape2D
+"
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vivmo"]
 resource_local_to_scene = true
 a = Vector2(-1000, 0)
 b = Vector2(1071, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_w48qg"]
-resource_local_to_scene = true
-a = Vector2(-133, 1)
-b = Vector2(135, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_vivmo"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2cqfq"]
 resource_local_to_scene = true
 a = Vector2(-187, 0)
 b = Vector2(214, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2cqfq"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yaehf"]
 resource_local_to_scene = true
 a = Vector2(-198, -1)
 b = Vector2(212.5, 0)
@@ -37,7 +40,7 @@ b = Vector2(212.5, 0)
 [node name="Main" type="Node2D" unique_id=1694163084]
 
 [node name="Adam" parent="." unique_id=1050556539 instance=ExtResource("1_ycdy4")]
-post_order_dialogue = null
+pre_order_dialogue = Array[String](["Hey", "How are you"])
 
 [node name="EspressoMachine" parent="." unique_id=1054846614 instance=ExtResource("1_7mycd")]
 position = Vector2(1706.0001, 732.00006)
@@ -70,34 +73,29 @@ texture = ExtResource("6_w48qg")
 
 [node name="Surfaces" type="Node2D" parent="." unique_id=1394636145]
 
-[node name="Table" parent="Surfaces" unique_id=1590663467 instance=ExtResource("1_0xm2m")]
+[node name="ServingMat" parent="Surfaces" unique_id=1590663467 instance=ExtResource("7_ycdy4")]
+position = Vector2(1321, 706)
+
+[node name="Table" parent="Surfaces" unique_id=1805890429 instance=ExtResource("1_0xm2m")]
 position = Vector2(928, 988)
+script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Table" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_ycdy4")
-
-[node name="ServingMat" parent="Surfaces" unique_id=1103273095 instance=ExtResource("1_0xm2m")]
-position = Vector2(1367, 711)
-
-[node name="CollisionShape2D" parent="Surfaces/ServingMat" index="0" unique_id=375987916]
-position = Vector2(0, 3)
-shape = SubResource("SegmentShape2D_w48qg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Surfaces/ServingMat" unique_id=370650813]
-z_index = -1
-texture = ExtResource("8_vivmo")
+shape = SubResource("SegmentShape2D_vivmo")
 
 [node name="Shelf1" parent="Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
 position = Vector2(105, 530)
+script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf1" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_vivmo")
+shape = SubResource("SegmentShape2D_2cqfq")
 
 [node name="Shelf2" parent="Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
 position = Vector2(114, 240)
+script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf2" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_2cqfq")
+shape = SubResource("SegmentShape2D_yaehf")
 
 [node name="Cups" type="Node2D" parent="." unique_id=196977630]
 
@@ -123,6 +121,5 @@ capacity = 12.0
 position = Vector2(237, 460)
 
 [editable path="Surfaces/Table"]
-[editable path="Surfaces/ServingMat"]
 [editable path="Surfaces/Shelf1"]
 [editable path="Surfaces/Shelf2"]

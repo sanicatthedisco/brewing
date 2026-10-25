@@ -2,6 +2,8 @@ extends Node
 
 @onready var text_box_scene = preload("res://Assets/Sprites/Dialogue/text_bubble3.png")
 
+signal dialog_complete
+
 var dialog_lines: Array[String] = []
 var current_line_index = 0
 var sfx: AudioStream
@@ -37,6 +39,7 @@ func _show_text_box():
 	
 func _on_text_box_finished_displaying():
 	can_advance_line = true
+	
 
 func _unhandled_input(event):
 	if(
@@ -50,5 +53,6 @@ func _unhandled_input(event):
 		if current_line_index >= dialog_lines.size():
 			is_dialog_active = false
 			current_line_index = 0
+			dialog_complete.emit()
 			return
 		_show_text_box()	

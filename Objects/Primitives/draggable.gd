@@ -2,6 +2,8 @@ class_name Draggable
 extends RigidBody2D
 
 var dragging := false
+var _saved_layer := 0
+var _saved_mask := 0
 
 @onready var detector: Area2D = $InteractionDetector
 
@@ -30,8 +32,14 @@ func _begin_dragging():
 	# Must freeze rigidbody physics
 	dragging = true
 	freeze = true
+	_saved_layer = collision_layer
+	_saved_mask = collision_mask
+	collision_layer = 0      # nothing can hit me
+	collision_mask = 0       # I don't hit anything
 
 func _end_dragging():
+	collision_layer = _saved_layer
+	collision_mask = _saved_mask
 	# Reset physics properties
 	PhysicsServer2D.body_set_state(get_rid(), PhysicsServer2D.BODY_STATE_TRANSFORM, transform)
 	PhysicsServer2D.body_set_state(get_rid(), PhysicsServer2D.BODY_STATE_LINEAR_VELOCITY, Vector2.ZERO)

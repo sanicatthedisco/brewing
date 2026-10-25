@@ -13,6 +13,7 @@ var fill_rate := 1.0
 
 func _ready():
 	body_pressed.visible = false
+	stream.default_color = Ingredients.ESPRESSO.color
 
 func _process(delta):
 	if active and dispense_target != null:

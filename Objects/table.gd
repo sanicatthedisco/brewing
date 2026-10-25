@@ -10,8 +10,3 @@ extends StaticBody2D
 func _ready():
 	rim.a.x = -width/2
 	rim.b.x = width/2
-
-func _draw():
-	if Engine.is_editor_hint():
-		draw_set_transform_matrix(collider.transform)
-		draw_line(Vector2(-width/2, position.y), Vector2(width/2, position.y), Color.BLACK, 4.0)

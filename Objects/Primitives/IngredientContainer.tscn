@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bja0ul5y8rw5k"]
 
-[ext_resource type="Script" uid="uid://bxgsrealxfew" path="res://Objects/Containers/ingredient_container.gd" id="1_372x3"]
+[ext_resource type="Script" uid="uid://bxgsrealxfew" path="res://Objects/Primitives/ingredient_container.gd" id="1_372x3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_heqi2"]
 size = Vector2(141, 139)
@@ -33,7 +33,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="InternalStream" type="Line2D" parent="Mask" unique_id=1043421760]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1075338833]
+[node name="MainSprite" type="Sprite2D" parent="." unique_id=1075338833]
 clip_children = 2
 
 [node name="PourZone" type="Area2D" parent="." unique_id=806354122]
@@ -64,3 +64,5 @@ shape = SubResource("CircleShape2D_jmhsy")
 [node name="SpoutPosLeft" type="Marker2D" parent="SpoutStuff" unique_id=861350612]
 
 [node name="SpoutPosRight" type="Marker2D" parent="SpoutStuff" unique_id=753664723]
+
+[node name="GarnishSite" type="Marker2D" parent="." unique_id=1844923448]

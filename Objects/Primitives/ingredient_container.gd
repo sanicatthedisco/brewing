@@ -14,6 +14,8 @@ var fill := 0.0
 @export var starting_fill: float
 @export var starting_ingredient: String
 
+var garnish = null
+
 func _ready():
 	super()
 	internal_stream.visible = false
@@ -96,7 +98,11 @@ func get_global_mask_top_y():
 	return mask.to_global(mask.get_rect().position).y + 20
 #endregion
 
-# ingredient_container.gd
+func apply_garnish(p_garnish: Garnish):
+	garnish = p_garnish
+	garnish.reparent(self)
+	garnish.position = $GarnishSite.position
+
 func get_global_x_range() -> Vector2:
 	var r := mask.get_rect()                       # local, already accounts for centering
 	var left := mask.to_global(r.position).x

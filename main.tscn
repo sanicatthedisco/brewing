@@ -2,26 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
-[ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Mug/Mug.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bygno35u5nyh5" path="res://Objects/Containers/Glass/Glass.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dfq1i8k4reyxm" path="res://Assets/Sprites/workspace_background.png" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://f6q3hscdopp7" path="res://testing/test_character.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cei8e0m5y0gmn" path="res://Assets/Sprites/cafe_backdrop.png" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://cqewiqo7um75c" path="res://Objects/Ingredients/Garnish/Garnish.tscn" id="7_272bh"]
 
 [node name="Main" type="Node2D" unique_id=1694163084]
 
-[node name="Mug3" parent="." unique_id=1266183240 instance=ExtResource("4_1bvp3")]
-position = Vector2(192, 846)
-capacity = 12.0
-starting_fill = 6.0
-starting_ingredient = "Milk"
-
 [node name="EspressoMachine" parent="." unique_id=1054846614 instance=ExtResource("1_7mycd")]
 position = Vector2(1706.0001, 732.00006)
-
-[node name="Mug2" parent="." unique_id=1679779724 instance=ExtResource("4_1bvp3")]
-position = Vector2(607, 843)
-capacity = 12.0
-starting_fill = 6.0
-starting_ingredient = "Blood"
 
 [node name="Background" type="Node2D" parent="." unique_id=1552619822]
 z_index = -4
@@ -41,18 +31,53 @@ scale = Vector2(0.73529416, 0.7352941)
 texture = ExtResource("6_272bh")
 metadata/_edit_lock_ = true
 
-[node name="Table" parent="." unique_id=1590663467 instance=ExtResource("1_0xm2m")]
-position = Vector2(928, 988)
-width = 5000.0
+[node name="Surfaces" type="Node2D" parent="." unique_id=1394636145]
 
-[node name="ServingMat" parent="." unique_id=1103273095 instance=ExtResource("1_0xm2m")]
+[node name="Table" parent="Surfaces" unique_id=1590663467 instance=ExtResource("1_0xm2m")]
+position = Vector2(928, 988)
+width = 2000.0
+
+[node name="ServingMat" parent="Surfaces" unique_id=1103273095 instance=ExtResource("1_0xm2m")]
 position = Vector2(1367, 711)
 width = 200.0
 
-[node name="Shelf1" parent="." unique_id=783082087 instance=ExtResource("1_0xm2m")]
+[node name="Shelf1" parent="Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
 position = Vector2(105, 530)
-width = 40.0
+width = 425.0
 
-[node name="Mug" parent="." unique_id=1898041628 instance=ExtResource("4_1bvp3")]
-position = Vector2(1307, 836)
+[node name="Shelf2" parent="Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
+position = Vector2(114, 240)
+width = 425.0
+
+[node name="Cups" type="Node2D" parent="." unique_id=196977630]
+
+[node name="Glass2" parent="Cups" unique_id=1679779724 instance=ExtResource("4_1bvp3")]
+position = Vector2(227, 439)
 capacity = 12.0
+starting_fill = 6.0
+starting_ingredient = "Blood"
+
+[node name="Glass" parent="Cups" unique_id=1898041628 instance=ExtResource("4_1bvp3")]
+position = Vector2(256, 159)
+capacity = 12.0
+
+[node name="Glass5" parent="Cups" unique_id=1266183240 instance=ExtResource("4_1bvp3")]
+position = Vector2(142, 159)
+capacity = 12.0
+
+[node name="Glass4" parent="Cups" unique_id=480004750 instance=ExtResource("4_1bvp3")]
+position = Vector2(29, 159)
+capacity = 12.0
+
+[node name="Glass3" parent="Cups" unique_id=1081548931 instance=ExtResource("4_1bvp3")]
+position = Vector2(76, 432)
+capacity = 12.0
+starting_fill = 6.0
+starting_ingredient = "Milk"
+
+[node name="CharacterBody2D" parent="." unique_id=1050556539 instance=ExtResource("6_7mycd")]
+z_index = -5
+position = Vector2(-137, -69)
+
+[node name="Garnish" parent="." unique_id=804989589 instance=ExtResource("7_272bh")]
+position = Vector2(228, 867)

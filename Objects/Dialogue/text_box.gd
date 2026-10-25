@@ -1,5 +1,5 @@
 extends MarginContainer
-
+@onready var text_bubble = $NinePatchRect
 @onready var label = $MarginContainer/Label
 @onready var timer = $LetterDisplayTimer
 @onready var audio_player = $AudioStreamPlayer

@@ -1,0 +1,40 @@
+{
+	"day_1": {
+		"pre_order": [
+			{"adam": "Could I have an iced latte please?"},
+			{"player": "?"},
+			{"adam": [
+				"Oh, sorry. That’s just what I usually order.",
+				"What do you guys have? I overslept and I'm kind of a mess...",
+				"I have to clock in in 20 minutes."
+			]},
+			{"player": [
+				"No worries. I just woke up from a nap myself.",
+				"The menu’s to your left."
+			]},
+			{"adam": [
+				"Hmm…",
+				"Then I’ll have an Americano.",
+				"...",
+				"Do you have anything that can give me some extra pep?"
+			]}
+		],
+		"evaluation": [
+			{"min_score": 0, "dialog": [{"adam": "This isn’t what I wanted at all."}]},
+			{"min_score": 0.5, "dialog": [{"adam": "It's okay..."}]},
+			{"min_score": 0.8, "dialog": [{"adam": "That... actually looks pretty good. Thanks."}]}
+		],
+		"additional_evaluation": {
+			"incorrect_garnish": {"adam": "Sort of missing that extra pep..."},
+			"small_amount": {"adam": "And this cup is hardly full."}
+		},
+		"order": {
+			"amount": 8,
+			"ingredients": {
+				"Espresso": 1,
+				"Water": 3
+			},
+			"garnish": "electric_star"
+		}
+	}
+}

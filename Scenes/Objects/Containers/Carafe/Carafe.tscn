@@ -16,6 +16,7 @@ size = Vector2(105, 214)
 
 [node name="Carafe" unique_id=1266183240 instance=ExtResource("1_hq52d")]
 script = ExtResource("2_hq52d")
+capacity = 16.0
 
 [node name="Mask" parent="." index="0" unique_id=1087823141]
 clip_children = 1
@@ -28,9 +29,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = -74.0
-offset_top = 52.0
+offset_top = 41.0
 offset_right = 75.0
-offset_bottom = 252.0
+offset_bottom = 211.0
 
 [node name="MainSprite" parent="." index="1" unique_id=1075338833]
 texture = ExtResource("4_qjbnv")

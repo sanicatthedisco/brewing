@@ -9,6 +9,7 @@ size = Vector2(104, 164)
 
 [node name="WaterJug" unique_id=804989589 instance=ExtResource("1_6pd52")]
 script = ExtResource("2_arbu5")
+capacity = 100.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1537178962]
 scale = Vector2(0.5, 0.5)

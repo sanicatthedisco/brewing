@@ -55,7 +55,8 @@ func _unhandled_input(event):
 		text_box.queue_free()
 		
 		current_line_index += 1
-		if current_line_index >= dialog.lines.size():
+		if current_line_index >= dialog.lines.size() or \
+			(GS.debug and current_line_index > GS.max_dialog_lines - 1):
 			is_dialog_active = false
 			current_line_index = 0
 			dialog_complete.emit()

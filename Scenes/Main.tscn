@@ -37,27 +37,27 @@ extends StaticBody2D
 @onready var rim = collider.shape as SegmentShape2D
 "
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_vvjo1"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kpo4j"]
 resource_local_to_scene = true
 a = Vector2(-1000, 0)
 b = Vector2(1071, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_yisvs"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4n42c"]
 resource_local_to_scene = true
 a = Vector2(-187, 0)
 b = Vector2(214, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_rgw24"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_c5snn"]
 resource_local_to_scene = true
 a = Vector2(-187, 0)
 b = Vector2(214, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_5gwyn"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xvtyr"]
 resource_local_to_scene = true
 a = Vector2(-187, 0)
 b = Vector2(214, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_r6gtk"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u7mjy"]
 resource_local_to_scene = true
 a = Vector2(-198, -1)
 b = Vector2(212.5, 0)
@@ -76,34 +76,27 @@ position = Vector2(158, 813)
 
 [node name="CocktailGlass" parent="Cups" unique_id=1266183240 instance=ExtResource("6_4yxf6")]
 position = Vector2(232, 453)
-capacity = 5.0
 starting_fill = 4.0
 starting_ingredient = "Blood"
 
 [node name="Carafe" parent="Cups" unique_id=1568535870 instance=ExtResource("7_qta6b")]
 position = Vector2(458, 867)
-capacity = 16.0
 
 [node name="Glass" parent="Cups" unique_id=731173235 instance=ExtResource("8_x3rx7")]
 position = Vector2(-21, 173)
-capacity = 12.0
 starting_ingredient = "Milk"
 
 [node name="Mug2" parent="Cups" unique_id=186446181 instance=ExtResource("9_6heos")]
 position = Vector2(94, 450)
-capacity = 12.0
 
 [node name="Mug" parent="Cups" unique_id=167219955 instance=ExtResource("9_6heos")]
 position = Vector2(-20, 451)
-capacity = 12.0
 
 [node name="Glass3" parent="Cups" unique_id=26179990 instance=ExtResource("8_x3rx7")]
 position = Vector2(213, 173)
-capacity = 12.0
 
 [node name="Glass2" parent="Cups" unique_id=1678497719 instance=ExtResource("8_x3rx7")]
 position = Vector2(94, 173)
-capacity = 12.0
 
 [node name="Background" type="Node2D" parent="." unique_id=1552619822]
 z_index = -4
@@ -203,21 +196,21 @@ position = Vector2(928, 988)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Table" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_vvjo1")
+shape = SubResource("SegmentShape2D_kpo4j")
 
 [node name="Shelf1" parent="Surfaces" unique_id=783082087 instance=ExtResource("24_7sj7i")]
 position = Vector2(105, 530)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf1" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_yisvs")
+shape = SubResource("SegmentShape2D_4n42c")
 
 [node name="Shelf3" parent="Surfaces" unique_id=1016166064 instance=ExtResource("24_7sj7i")]
 position = Vector2(1789, 246)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf3" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_rgw24")
+shape = SubResource("SegmentShape2D_c5snn")
 metadata/_edit_lock_ = true
 
 [node name="Shelf4" parent="Surfaces" unique_id=341765567 instance=ExtResource("24_7sj7i")]
@@ -225,7 +218,7 @@ position = Vector2(1794, 528)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf4" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_5gwyn")
+shape = SubResource("SegmentShape2D_xvtyr")
 metadata/_edit_lock_ = true
 
 [node name="Shelf2" parent="Surfaces" unique_id=808925479 instance=ExtResource("24_7sj7i")]
@@ -233,7 +226,7 @@ position = Vector2(114, 240)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf2" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_r6gtk")
+shape = SubResource("SegmentShape2D_u7mjy")
 
 [node name="Pourable" parent="." unique_id=253281349 instance=ExtResource("25_semxg")]
 position = Vector2(1781, 884)

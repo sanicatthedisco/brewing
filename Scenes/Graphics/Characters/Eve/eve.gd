@@ -22,7 +22,16 @@ func _ready():
 		0.5: Dialog.new([DLine.new("Not up to par")]),
 		0.9: Dialog.new([DLine.new("This is good. Thanks")]),
 	}
-
+	
+	incorrect_garnish_dialog = Dialog.new([
+		DLine.new("How can a lemon delight possibly be delightful..."),
+		DLine.new("Without the lemon?")
+	])
+	
+	small_amount_dialog = Dialog.new([
+		DLine.new("Are you trying to scam me here?"),
+		DLine.new("At least get smaller cups.")
+	])
 	
 	order = Order.new(
 	8,

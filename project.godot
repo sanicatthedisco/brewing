@@ -18,6 +18,7 @@ config/icon="uid://juo66qomumfm"
 [autoload]
 
 DialogManager="*uid://btbl83jpp7wmm"
+GS="*uid://utpnmhu5dkqt"
 
 [display]
 

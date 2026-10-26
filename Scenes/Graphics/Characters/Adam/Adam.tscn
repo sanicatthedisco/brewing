@@ -1,5 +1,21 @@
 [gd_scene format=3 uid="uid://bfsleojhdq3h3"]
 
 [ext_resource type="PackedScene" uid="uid://f6q3hscdopp7" path="res://Scenes/Graphics/Characters/Character.tscn" id="1_qpsve"]
+[ext_resource type="Texture2D" uid="uid://cva8hres8vye0" path="res://Assets/Sprites/char_transparent.png" id="2_mh2uw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afwlm"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mh2uw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Adam" unique_id=1050556539 instance=ExtResource("1_qpsve")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=427216875]
+sprite_frames = SubResource("SpriteFrames_afwlm")

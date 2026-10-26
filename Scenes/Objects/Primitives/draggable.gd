@@ -7,9 +7,6 @@ var _saved_mask := 0
 
 @onready var detector: Area2D = $InteractionDetector
 
-func _ready():
-	pass
-
 func _physics_process(_delta):
 	# If dragging, snap to mouse pos
 	if dragging:

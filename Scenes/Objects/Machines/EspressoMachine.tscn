@@ -12,7 +12,7 @@ size = Vector2(264.16666, 118.333336)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfmwq"]
 size = Vector2(67.5, 80.000015)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_05ich"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kid3g"]
 resource_local_to_scene = true
 a = Vector2(-113.16666, -2.6666794)
 b = Vector2(100.166664, 0.6666565)
@@ -42,6 +42,7 @@ position = Vector2(-12.5, -56.666664)
 
 [node name="Stream" type="Line2D" parent="." unique_id=781829747]
 top_level = true
+width = 8.0
 
 [node name="ContainerArea" type="Area2D" parent="." unique_id=355789377]
 
@@ -53,6 +54,6 @@ shape = SubResource("RectangleShape2D_cfmwq")
 position = Vector2(-1.4166651, 32.66667)
 
 [node name="CollisionShape2D" parent="ContainerArea/CollisionShape2D/Platform" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_05ich")
+shape = SubResource("SegmentShape2D_kid3g")
 
 [editable path="ContainerArea/CollisionShape2D/Platform"]

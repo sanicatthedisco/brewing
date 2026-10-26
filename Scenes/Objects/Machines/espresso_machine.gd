@@ -19,7 +19,7 @@ func _process(delta):
 	if active and dispense_target != null:
 		(dispense_target as IngredientContainer).add_ingredient(Ingredients.ESPRESSO, fill_rate * delta)
 		_update_stream()
-		(dispense_target as IngredientContainer).update_stream(spout.global_position, Ingredients.ESPRESSO.color)
+		(dispense_target as IngredientContainer).update_internal_stream(spout.global_position, Ingredients.ESPRESSO.color)
 
 func _input_event(viewport, event, shape_idx):
 	if _cursor_over_draggable():
@@ -42,6 +42,7 @@ func _begin_dispensing():
 			break
 
 func _end_dispensing():
+	stream.visible = false
 	body_pressed.visible = false
 	active = false
 	if dispense_target != null:

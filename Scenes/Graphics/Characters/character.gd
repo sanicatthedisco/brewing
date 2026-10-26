@@ -6,6 +6,8 @@ class_name Character extends CharacterBody2D
 
 var pre_order_dialog: Dialog
 var evaluation_dialogs: Dictionary[float, Dialog]
+var incorrect_garnish_dialog: Dialog = Dialog.new([])
+var small_amount_dialog: Dialog = Dialog.new([])
 
 var order: Order
 
@@ -16,7 +18,7 @@ signal took_drink
 enum State {ORDERING, APPEARING, WAITING, EVALUATING, LEAVING}
 var state: State = State.APPEARING
 
-var move_speed = 200.0
+var move_speed = 200.0 if not GS.debug else 1000.0
 var target_x = 400.0
 var dialogue_started = false
 
@@ -44,12 +46,18 @@ func start_npc_dialogue(dialog: Array[DLine]) -> void:
 
 func recieve_order(item: IngredientContainer):
 	state = State.EVALUATING
-	var score := order.evaluate_container(item)
-	print("Score: ", score)
+	var eval := order.evaluate_container(item)
 	var dialog: Dialog = evaluation_dialogs[0.0]
 	for score_cutoff in evaluation_dialogs:
-		if score >= score_cutoff:
+		if eval.score >= score_cutoff:
 			dialog = evaluation_dialogs[score_cutoff]
+	
+	if not eval.was_garnish_correct:
+		dialog = Dialog.combine([dialog, incorrect_garnish_dialog])
+	if eval.amount_error > 0.2:
+		dialog = Dialog.combine([dialog, small_amount_dialog])
+	
+	print(dialog.lines)
 	send_dialog(dialog)
 
 func send_dialog(dialog: Dialog):

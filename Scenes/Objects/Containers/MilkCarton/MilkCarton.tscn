@@ -9,6 +9,7 @@ size = Vector2(118, 130)
 
 [node name="MilkCarton" unique_id=804989589 instance=ExtResource("1_vbw3t")]
 script = ExtResource("2_vcasx")
+capacity = 100.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1537178962]
 texture = ExtResource("2_5mveg")

@@ -2,7 +2,8 @@ extends Pourable
 
 func _ready():
 	super()
-	ingredient = Ingredients.WATER
+	add_ingredient(Ingredients.WATER, 100)
+	print(fill)
 
 func _begin_pouring(target: IngredientContainer):
 	super(target)

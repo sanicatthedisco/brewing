@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dgiub6v6njshy"]
+
+[ext_resource type="Script" uid="uid://047ycknps1n4" path="res://Objects/recipes/recipes.gd" id="1_d0qnh"]
+[ext_resource type="Texture2D" uid="uid://bym3ykd164nn5" path="res://Assets/Sprites/recipes/recipes_book.png" id="2_d0qnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ickja"]
+size = Vector2(115, 139)
+
+[node name="Recipes" type="Node2D" unique_id=693518963]
+script = ExtResource("1_d0qnh")
+
+[node name="Node2D" type="Area2D" parent="." unique_id=1604781246]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=1210767718]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_ickja")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1506785698]
+position = Vector2(1, 1)
+scale = Vector2(0.66477275, 0.65048546)
+texture = ExtResource("2_d0qnh")
+
+[connection signal="input_event" from="Node2D" to="." method="_on_node_2d_input_event"]

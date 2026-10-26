@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://djoo76h5c1inr"]
 
-[ext_resource type="PackedScene" uid="uid://f6q3hscdopp7" path="res://Objects/Dialogue/Characters/Character.tscn" id="1_bvv6f"]
+[ext_resource type="PackedScene" uid="uid://f6q3hscdopp7" path="res://Objects/Characters/Character.tscn" id="1_bvv6f"]
 [ext_resource type="Texture2D" uid="uid://brtohkfcoaraf" path="res://Assets/Sprites/kid.png" id="2_3wgxj"]
-[ext_resource type="Script" uid="uid://5527mtppfjgh" path="res://Objects/Dialogue/Characters/Kid/kid.gd" id="2_kb8mx"]
+[ext_resource type="Script" uid="uid://5527mtppfjgh" path="res://Objects/Characters/Kid/kid.gd" id="2_kb8mx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kb8mx"]
 resource_local_to_scene = true

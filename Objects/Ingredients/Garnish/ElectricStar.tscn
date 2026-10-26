@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://scot3pwockud"]
-
-[ext_resource type="PackedScene" uid="uid://cqewiqo7um75c" path="res://Objects/Ingredients/Garnish/Garnish.tscn" id="1_pyehq"]
-[ext_resource type="Texture2D" uid="uid://bdnpmcr7kx884" path="res://Assets/Sprites/Ingredients/electric_star.png" id="2_dkniw"]
-
-[node name="ElectricStar" unique_id=804989589 instance=ExtResource("1_pyehq")]
-
-[node name="Sprite2D" parent="." index="0" unique_id=1537178962]
-texture = ExtResource("2_dkniw")

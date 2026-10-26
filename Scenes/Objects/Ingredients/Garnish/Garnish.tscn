@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cqewiqo7um75c"]
+
+[ext_resource type="PackedScene" uid="uid://cmyi2np3k5aa4" path="res://Scenes/Objects/Primitives/Draggable.tscn" id="1_06cnr"]
+[ext_resource type="Script" uid="uid://b6tfh6q7pbiru" path="res://Scenes/Objects/Ingredients/Garnish/garnish.gd" id="2_62bbn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_62bbn"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06cnr"]
+size = Vector2(50, 49)
+
+[node name="Garnish" unique_id=804989589 instance=ExtResource("1_06cnr")]
+script = ExtResource("2_62bbn")
+garnish_name = ""
+
+[node name="Sprite2D" parent="." index="0" unique_id=1537178962]
+texture = SubResource("PlaceholderTexture2D_62bbn")
+
+[node name="PhysicsCollider" parent="." index="1" unique_id=1515525844]
+polygon = PackedVector2Array(24, -24, -24, -23, -25, 24, 26, 24)
+
+[node name="InteractionZone" parent="InteractionDetector" parent_id_path=PackedInt32Array(790295964) index="0" unique_id=1632809004]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_06cnr")

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
-[ext_resource type="PackedScene" uid="uid://ikjy4mnpaaki" path="res://Objects/letter/letter.tscn" id="1_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://cn3he6bdr5xei" path="res://Objects/OrderManager.tscn" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Objects/Dialogue/Characters/Adam/Adam.tscn" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://djoo76h5c1inr" path="res://Objects/Dialogue/Characters/Kid/Kid.tscn" id="2_lswn8"]
@@ -65,8 +64,6 @@ b = Vector2(212.5, 0)
 
 [node name="Main" type="Node2D" unique_id=1694163084]
 
-[node name="Letter" parent="." unique_id=78097766 instance=ExtResource("1_qsp4k")]
-
 [node name="OrderManager" parent="." unique_id=1788546562 node_paths=PackedStringArray("serving_mat", "glass") instance=ExtResource("1_w48qg")]
 serving_mat = NodePath("../Surfaces/ServingMat")
 character_scenes = Array[PackedScene]([ExtResource("1_ycdy4"), ExtResource("4_a6jrf"), ExtResource("2_lswn8")])
@@ -79,7 +76,9 @@ position = Vector2(158, 813)
 
 [node name="CocktailGlass" parent="Cups" unique_id=1266183240 instance=ExtResource("6_4c57u")]
 position = Vector2(232, 453)
-capacity = 4.0
+capacity = 5.0
+starting_fill = 4.0
+starting_ingredient = "Blood"
 
 [node name="Carafe" parent="Cups" unique_id=1568535870 instance=ExtResource("6_kek77")]
 position = Vector2(458, 867)
@@ -88,23 +87,22 @@ capacity = 16.0
 [node name="Glass" parent="Cups" unique_id=731173235 instance=ExtResource("4_1bvp3")]
 position = Vector2(-21, 173)
 capacity = 12.0
-starting_fill = 11.0
 starting_ingredient = "Milk"
+
+[node name="Mug2" parent="Cups" unique_id=186446181 instance=ExtResource("7_5vw27")]
+position = Vector2(94, 450)
+capacity = 12.0
 
 [node name="Mug" parent="Cups" unique_id=167219955 instance=ExtResource("7_5vw27")]
 position = Vector2(-20, 451)
 capacity = 12.0
 
-[node name="Mug" parent="Cups/Mug" unique_id=186446181 instance=ExtResource("7_5vw27")]
-position = Vector2(114, -1)
+[node name="Glass3" parent="Cups" unique_id=26179990 instance=ExtResource("4_1bvp3")]
+position = Vector2(213, 173)
 capacity = 12.0
 
 [node name="Glass2" parent="Cups" unique_id=1678497719 instance=ExtResource("4_1bvp3")]
 position = Vector2(94, 173)
-capacity = 12.0
-
-[node name="Glass2" parent="Cups/Glass2" unique_id=26179990 instance=ExtResource("4_1bvp3")]
-position = Vector2(119, 0)
 capacity = 12.0
 
 [node name="Background" type="Node2D" parent="." unique_id=1552619822]

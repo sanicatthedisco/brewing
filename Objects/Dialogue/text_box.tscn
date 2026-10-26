@@ -3,25 +3,6 @@
 [ext_resource type="Script" uid="uid://dqw1jlgmnp3ap" path="res://Objects/Dialogue/text_box.gd" id="1_1i74w"]
 [ext_resource type="Texture2D" uid="uid://ce0cj1cbkhv70" path="res://Assets/Sprites/Dialogue/text_bubble3.png" id="2_1i74w"]
 
-[sub_resource type="FontFile" id="FontFile_d0rgj"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
 [node name="TextBox" type="MarginContainer" unique_id=2032658661]
 offset_top = -3.0
 offset_right = 55.0
@@ -47,7 +28,6 @@ theme_override_constants/margin_bottom = 8
 [node name="Label" type="Label" parent="MarginContainer" unique_id=1311246847]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.32498592, 0.16342056, 0.023305463, 1)
-theme_override_fonts/font = SubResource("FontFile_d0rgj")
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=729566560]

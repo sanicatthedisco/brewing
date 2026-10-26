@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://33yjcubc8vgi"]
+[gd_scene format=3 uid="uid://ta5fgdjwgsxi"]
 
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
@@ -65,9 +65,11 @@ b = Vector2(212.5, 0)
 
 [node name="Main" type="Node2D" unique_id=1694163084]
 
+[node name="Letter" parent="." unique_id=78097766 instance=ExtResource("1_qsp4k")]
+
 [node name="OrderManager" parent="." unique_id=1788546562 node_paths=PackedStringArray("serving_mat", "glass") instance=ExtResource("1_w48qg")]
 serving_mat = NodePath("../Surfaces/ServingMat")
-character_scenes = Array[PackedScene]([ExtResource("1_ycdy4"), ExtResource("2_lswn8"), ExtResource("4_a6jrf")])
+character_scenes = Array[PackedScene]([ExtResource("1_ycdy4"), ExtResource("4_a6jrf"), ExtResource("2_lswn8")])
 glass = NodePath("../Cups/Glass2")
 
 [node name="EspressoMachine" parent="." unique_id=1054846614 instance=ExtResource("1_7mycd")]
@@ -77,9 +79,7 @@ position = Vector2(158, 813)
 
 [node name="CocktailGlass" parent="Cups" unique_id=1266183240 instance=ExtResource("6_4c57u")]
 position = Vector2(232, 453)
-capacity = 5.0
-starting_fill = 4.0
-starting_ingredient = "Blood"
+capacity = 4.0
 
 [node name="Carafe" parent="Cups" unique_id=1568535870 instance=ExtResource("6_kek77")]
 position = Vector2(458, 867)
@@ -88,7 +88,8 @@ capacity = 16.0
 [node name="Glass" parent="Cups" unique_id=731173235 instance=ExtResource("4_1bvp3")]
 position = Vector2(-21, 173)
 capacity = 12.0
-starting_ingredient = "Blood"
+starting_fill = 11.0
+starting_ingredient = "Milk"
 
 [node name="Mug" parent="Cups" unique_id=167219955 instance=ExtResource("7_5vw27")]
 position = Vector2(-20, 451)
@@ -243,19 +244,12 @@ position = Vector2(1781, 884)
 position = Vector2(1667, 874)
 
 [node name="Recipes" parent="." unique_id=693518963 instance=ExtResource("24_0odxb")]
-position = Vector2(1670, 687)
+position = Vector2(1796, 678)
 
 [node name="ActualRecipes" parent="Recipes" unique_id=539418797 instance=ExtResource("28_xuqvo")]
 visible = false
 z_index = 8
 position = Vector2(-1823, -699)
-
-[node name="Letter" parent="." unique_id=78097766 instance=ExtResource("1_qsp4k")]
-position = Vector2(1632, 557)
-scale = Vector2(0.7, 0.7)
-
-[node name="ActualLetters" parent="Letter" index="2" unique_id=2122008368]
-position = Vector2(-1170.0001, -517.1429)
 
 [editable path="Garnishes/Lemon"]
 [editable path="Garnishes/Eye"]
@@ -264,4 +258,3 @@ position = Vector2(-1170.0001, -517.1429)
 [editable path="Surfaces/Shelf3"]
 [editable path="Surfaces/Shelf4"]
 [editable path="Surfaces/Shelf2"]
-[editable path="Letter"]

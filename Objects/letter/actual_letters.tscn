@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ho73id3vqkik" path="res://Assets/Sprites/letter/936e5aeeb026c8fd5141cebee06a8b70.png" id="1_uhtfs"]
 
 [node name="ActualLetters" type="Node2D" unique_id=2122008368]
-scale = Vector2(1.3, 1.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923422276]
 position = Vector2(956, 564)

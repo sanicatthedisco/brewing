@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://vngvihe74l52"]
+
+[ext_resource type="Script" uid="uid://xenyub1n62pg" path="res://Scenes/main menu/main_menu.gd" id="1_uju01"]
+[ext_resource type="Texture2D" uid="uid://dduqgerwhhg0o" path="res://Assets/Sprites/MainMenu/start_bottom.png" id="2_4hv1n"]
+[ext_resource type="Texture2D" uid="uid://cexqm6bt1tx64" path="res://Assets/Sprites/MainMenu/strat_botton_pressed.png" id="3_dcoi5"]
+[ext_resource type="Texture2D" uid="uid://dimk7lxq35un0" path="res://Assets/Sprites/MainMenu/menu_background.png" id="3_p3nth"]
+[ext_resource type="PackedScene" uid="uid://bgkhj2u44mwxn" path="res://Assets/Sprites/MainMenu/fade_transtition.tscn" id="4_p3nth"]
+
+[node name="MainMenu" type="Node2D" unique_id=1619869777]
+script = ExtResource("1_uju01")
+
+[node name="button_manager" type="Control" parent="." unique_id=655454714]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="button_start" type="TextureButton" parent="button_manager" unique_id=2027539147]
+top_level = true
+layout_mode = 0
+offset_left = 618.0
+offset_top = 730.0
+offset_right = 1234.0
+offset_bottom = 920.0
+texture_normal = ExtResource("2_4hv1n")
+texture_pressed = ExtResource("3_dcoi5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=329510478]
+position = Vector2(961, 539)
+texture = ExtResource("3_p3nth")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=924946448]
+position = Vector2(957, 541)
+
+[node name="fade_transition" parent="." unique_id=1897404631 instance=ExtResource("4_p3nth")]
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=1896486977]
+
+[connection signal="pressed" from="button_manager/button_start" to="." method="_on_button_start_pressed"]

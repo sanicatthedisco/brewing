@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bygno35u5nyh5"]
+
+[ext_resource type="PackedScene" uid="uid://bja0ul5y8rw5k" path="res://Scenes/Main/Primitives/IngredientContainer.tscn" id="1_8lafr"]
+[ext_resource type="Script" uid="uid://cpkrdvcdriwvd" path="res://Scenes/Main/Containers/Glass/glass.gd" id="2_td8cy"]
+[ext_resource type="Texture2D" uid="uid://bvktbpv4fxnok" path="res://Assets/Sprites/Containers/glass_mask.png" id="3_5y0h7"]
+[ext_resource type="Texture2D" uid="uid://0ap7sq4kyo1g" path="res://Assets/Sprites/Containers/glass.png" id="4_1bp4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lafr"]
+size = Vector2(47, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmhsy"]
+size = Vector2(106, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hieh1"]
+size = Vector2(108, 135)
+
+[node name="Glass" unique_id=1266183240 instance=ExtResource("1_8lafr")]
+script = ExtResource("2_td8cy")
+
+[node name="Mask" parent="." index="0" unique_id=1087823141]
+clip_children = 1
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_5y0h7")
+
+[node name="Liquid" parent="Mask" index="0" unique_id=911795064]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -73.0
+offset_top = 89.0
+offset_right = 76.0
+offset_bottom = 289.0
+
+[node name="MainSprite" parent="." index="1" unique_id=1075338833]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_1bp4k")
+
+[node name="CollisionShape2D" parent="PourZone" parent_id_path=PackedInt32Array(806354122) index="0" unique_id=186712206]
+position = Vector2(1, -104)
+shape = SubResource("RectangleShape2D_8lafr")
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=1592872759]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_jmhsy")
+
+[node name="InteractionZone" parent="InteractionDetector" parent_id_path=PackedInt32Array(69867065) index="0" unique_id=805710803]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_hieh1")
+
+[node name="Spout" parent="SpoutStuff" parent_id_path=PackedInt32Array(1172241664) index="0" unique_id=751968024]
+position = Vector2(0, -54)
+
+[node name="SpoutCollider" parent="SpoutStuff/Spout" index="0" unique_id=1708787041]
+debug_color = Color(0.9607843, 0, 0.5176471, 0.827451)
+
+[node name="SpoutPosLeft" parent="SpoutStuff" parent_id_path=PackedInt32Array(1172241664) index="1" unique_id=861350612]
+position = Vector2(-38, -51)
+
+[node name="SpoutPosRight" parent="SpoutStuff" parent_id_path=PackedInt32Array(1172241664) index="2" unique_id=753664723]
+position = Vector2(39, -51)
+
+[node name="GarnishSite" parent="." index="7" unique_id=1844923448]
+position = Vector2(25, -57)

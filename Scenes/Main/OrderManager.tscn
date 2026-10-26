@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cn3he6bdr5xei"]
+
+[ext_resource type="Script" uid="uid://die33n3hlt2cu" path="res://Scenes/Main/order_manager.gd" id="1_02wla"]
+[ext_resource type="PackedScene" uid="uid://ug1vtyqj5qob" path="res://Scenes/Main/Characters/Eve/Eve.tscn" id="2_g2qc7"]
+[ext_resource type="PackedScene" uid="uid://djoo76h5c1inr" path="res://Scenes/Main/Characters/Kid/Kid.tscn" id="2_ptoth"]
+[ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Scenes/Main/Characters/Adam/Adam.tscn" id="3_g2qc7"]
+
+[node name="OrderManager" type="Node2D" unique_id=1788546562]
+script = ExtResource("1_02wla")
+character_scenes = Array[PackedScene]([ExtResource("2_g2qc7"), ExtResource("2_ptoth"), ExtResource("3_g2qc7")])

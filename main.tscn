@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chxk2ct451rqe" path="res://Objects/Table.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Objects/Machines/EspressoMachine.tscn" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ikjy4mnpaaki" path="res://Objects/letter/letter.tscn" id="1_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://cn3he6bdr5xei" path="res://Objects/OrderManager.tscn" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Objects/Dialogue/Characters/Adam/Adam.tscn" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://djoo76h5c1inr" path="res://Objects/Dialogue/Characters/Kid/Kid.tscn" id="2_lswn8"]

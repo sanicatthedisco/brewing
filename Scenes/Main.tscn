@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ta5fgdjwgsxi"]
 
+[ext_resource type="PackedScene" uid="uid://bj1kxj5b1b0a8" path="res://Objects/recipes/actual_recipes.tscn" id="28_xuqvo"]
+=======
 [ext_resource type="PackedScene" uid="uid://cn3he6bdr5xei" path="res://Scenes/Controllers/OrderManager.tscn" id="1_kpo4j"]
 [ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Scenes/Graphics/Characters/Adam.tscn" id="2_4n42c"]
 [ext_resource type="PackedScene" uid="uid://djoo76h5c1inr" path="res://Scenes/Graphics/Characters/Kid.tscn" id="3_c5snn"]
@@ -28,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bprdunq5uot7" path="res://Scenes/Objects/Containers/WaterJug/WaterJug.tscn" id="26_ep8v8"]
 [ext_resource type="PackedScene" uid="uid://dgiub6v6njshy" path="res://Scenes/Graphics/recipes/recipes.tscn" id="27_3133c"]
 [ext_resource type="PackedScene" uid="uid://bj1kxj5b1b0a8" path="res://Scenes/Graphics/recipes/actual_recipes.tscn" id="28_js5gh"]
+>>>>>>> 6ef38fc85def6f7e5d13216ba887ed9cda017055:Scenes/Main.tscn
 
 [sub_resource type="GDScript" id="GDScript_w48qg"]
 script/source = "@tool
@@ -241,6 +244,9 @@ position = Vector2(1796, 678)
 visible = false
 z_index = 8
 position = Vector2(-1823, -699)
+
+[node name="Letter" parent="." unique_id=78097766 instance=ExtResource("28_xuqvo")]
+position = Vector2(885, 759)
 
 [editable path="Garnishes/Lemon"]
 [editable path="Garnishes/Eye"]

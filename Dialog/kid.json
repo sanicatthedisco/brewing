@@ -1,0 +1,45 @@
+{
+	"day_1": {
+		"pre_order": [
+			{"kid": "..."},
+			{"player": [
+				"(This kid is wearing such a huge jacket…)",
+				"(Is it even that cold outside today?)",
+				"(... I thought it was summer. What season was it again?)"
+			]},
+			{"kid": "… May I have some milk?"},
+			{"player": "(They’re shivering…)"},
+			{"kid": [
+				"… Please? Is it fast?",
+				"I have to go home before it gets dark.",
+				"My mom always told me it’s dangerous",
+				"when you can’t see the sidewalk.",
+				"Cuz there’s bad people hiding.",
+				"But I’m really really thirsty.",
+				"And I didn’t bring any water",
+				"Cuz I thought I’d only walk for a little bit.",
+				"I only have… 3 dollars and a quarter."
+			]},
+			{"player": "Don’t worry about that. On the house."}
+		],
+		"evaluation": [
+			{"min_score": 0, "dialog": [{"kid": [
+				"Oh, I… Don’t know if I can drink that.",
+				"Sorry. I’m in a hurry, so…!"
+			]}]},
+			{"min_score": 0.5, "dialog": [{"kid": "Thanks! I have to go now!"}]}
+		],
+		"additional_evaluation": {
+			"small_amount": {"kid": [
+				"Oh... that's not very much.",
+				"Thanks I guess."
+			]}
+		},
+		"order": {
+			"amount": 8,
+			"composition": {
+				"Milk": 1
+			}
+		}
+	}
+}

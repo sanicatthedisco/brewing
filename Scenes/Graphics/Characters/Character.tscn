@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://f6q3hscdopp7"]
 
-[ext_resource type="Script" uid="uid://cbdbu3qkiwe6f" path="res://Scenes/Graphics/Characters/Adam/adam.gd" id="1_1t1e8"]
 [ext_resource type="Texture2D" uid="uid://cva8hres8vye0" path="res://Assets/Sprites/char_transparent.png" id="1_4fqcr"]
+[ext_resource type="Script" uid="uid://dic8l2et8uhxf" path="res://Scenes/Graphics/Characters/character.gd" id="1_hbmuc"]
+[ext_resource type="Script" uid="uid://63qa67j4iree" path="res://Scenes/Graphics/Characters/dialog_loader.gd" id="3_hbmuc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l0epr"]
 resource_local_to_scene = true
@@ -18,11 +19,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ickja"]
 size = Vector2(412, 916)
 
-[node name="Adam" type="CharacterBody2D" unique_id=1050556539]
+[node name="Character" type="CharacterBody2D" unique_id=1050556539]
 z_index = -4
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_1t1e8")
+script = ExtResource("1_hbmuc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427216875]
 position = Vector2(374, 537)
@@ -37,3 +38,6 @@ shape = SubResource("RectangleShape2D_ickja")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=275994210]
 top_level = true
 position = Vector2(971, 544)
+
+[node name="DialogLoader" type="Node" parent="." unique_id=763575486]
+script = ExtResource("3_hbmuc")

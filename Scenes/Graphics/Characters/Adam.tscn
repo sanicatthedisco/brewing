@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bfsleojhdq3h3"]
 
 [ext_resource type="PackedScene" uid="uid://f6q3hscdopp7" path="res://Scenes/Graphics/Characters/Character.tscn" id="1_qpsve"]
+[ext_resource type="Script" uid="uid://dic8l2et8uhxf" path="res://Scenes/Graphics/Characters/character.gd" id="2_6baty"]
 [ext_resource type="Texture2D" uid="uid://cva8hres8vye0" path="res://Assets/Sprites/char_transparent.png" id="2_mh2uw"]
+[ext_resource type="JSON" path="res://Dialog/adam.json" id="3_s0a7n"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_afwlm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mh2uw"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -16,6 +18,8 @@ animations = [{
 }]
 
 [node name="Adam" unique_id=1050556539 instance=ExtResource("1_qpsve")]
+script = ExtResource("2_6baty")
+data = ExtResource("3_s0a7n")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=427216875]
-sprite_frames = SubResource("SpriteFrames_afwlm")
+sprite_frames = SubResource("SpriteFrames_mh2uw")

@@ -1,0 +1,47 @@
+{
+	"day_1": {
+		"pre_order": [
+			{"eve": "..."},
+			{"player": "(She seems a bit creepy.)"},
+			{"eve": "Hello"},
+			{"player": "(What is she trying to say)"},
+			{"eve": "I want a lemon delight."},
+			{"player": "Ok"},
+			{"eve": "It seems I can’t even get a good coffee in death."},
+			{"player": "What do you mean?"},
+			{"eve": [
+				"I’ll explain. Make my drink first",
+				"Have you not noticed? Everyone here is dead."
+			]},
+			{"player": [
+				"(Looking back, everyone was a little weird)",
+				"(What was up with the weird letters?)",
+				"(And the sirens I heard when I woke up.)"
+			]}
+		],
+		"evaluation": [
+			{"min_score": 0, "dialog": [{"eve": "This is horrendous."}]},
+			{"min_score": 0.5, "dialog": [{"eve": "Not up to par"}]},
+			{"min_score": 0.9, "dialog": [{"eve": "This is good. Thanks"}]}
+		],
+		"additional_evaluation": {
+			"incorrect_garnish": {"eve": [
+				"How can a lemon delight possibly be delightful...",
+				"Without the lemon?"
+			]},
+			"small_amount": {"eve": [
+				"Are you trying to scam me here?",
+				"At least get smaller cups."
+			]}
+		},
+		"order": {
+			"amount": 8,
+			"composition": {
+				"Espresso": 1,
+				"Milk": 1,
+				"Blood": 1
+			},
+			"garnish": "lemon"
+		}
+	}
+}

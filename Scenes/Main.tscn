@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ta5fgdjwgsxi"]
 
 [ext_resource type="PackedScene" uid="uid://cn3he6bdr5xei" path="res://Scenes/Controllers/OrderManager.tscn" id="1_kpo4j"]
-[ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Scenes/Graphics/Characters/Adam/Adam.tscn" id="2_4n42c"]
-[ext_resource type="PackedScene" uid="uid://djoo76h5c1inr" path="res://Scenes/Graphics/Characters/Kid/Kid.tscn" id="3_c5snn"]
-[ext_resource type="PackedScene" uid="uid://ug1vtyqj5qob" path="res://Scenes/Graphics/Characters/Eve/Eve.tscn" id="4_xvtyr"]
+[ext_resource type="PackedScene" uid="uid://bfsleojhdq3h3" path="res://Scenes/Graphics/Characters/Adam.tscn" id="2_4n42c"]
+[ext_resource type="PackedScene" uid="uid://djoo76h5c1inr" path="res://Scenes/Graphics/Characters/Kid.tscn" id="3_c5snn"]
+[ext_resource type="PackedScene" uid="uid://ug1vtyqj5qob" path="res://Scenes/Graphics/Characters/Eve.tscn" id="4_xvtyr"]
 [ext_resource type="PackedScene" uid="uid://bqepkful3ipox" path="res://Scenes/Objects/Machines/EspressoMachine.tscn" id="5_u7mjy"]
 [ext_resource type="PackedScene" uid="uid://vmjc688b2ks7" path="res://Scenes/Objects/Containers/CocktailGlass/CocktailGlass.tscn" id="6_4yxf6"]
 [ext_resource type="PackedScene" uid="uid://dfg1byrkdy3op" path="res://Scenes/Objects/Containers/Carafe/Carafe.tscn" id="7_qta6b"]

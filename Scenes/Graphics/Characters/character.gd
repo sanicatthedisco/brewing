@@ -1,15 +1,8 @@
 class_name Character extends CharacterBody2D
 
-@export var pre_order_dialogue: Array[String]
 @export var speech_sound = preload("res://Assets/sounds/dandys-world-classic-text-box-sound.mp3")
-@export var post_order_dialogue: Array[String]
-
-var pre_order_dialog: Dialog
-var evaluation_dialogs: Dictionary[float, Dialog]
-var incorrect_garnish_dialog: Dialog = Dialog.new([])
-var small_amount_dialog: Dialog = Dialog.new([])
-
-var order: Order
+@export var data: JSON
+var day: int = 1
 
 signal ready_for_order
 signal order_complete
@@ -22,8 +15,10 @@ var move_speed = 200.0 if not GS.debug else 1000.0
 var target_x = 400.0
 var dialogue_started = false
 
+@onready var dialog_loader := $DialogLoader
+
 func _ready():
-	print(pre_order_dialog)
+	dialog_loader._data = data.data
 
 func _physics_process(delta: float) -> void:
 	match state:
@@ -31,7 +26,7 @@ func _physics_process(delta: float) -> void:
 			if position.x < target_x:
 				position.x += move_speed * delta
 			else:
-				start_npc_dialogue(pre_order_dialog.lines)
+				send_dialog(dialog_loader.get_pre_order(day))
 				state = State.ORDERING
 		State.LEAVING:
 			if position.x > target_x:
@@ -39,28 +34,19 @@ func _physics_process(delta: float) -> void:
 			else:
 				order_complete.emit()
 
-
-func start_npc_dialogue(dialog: Array[DLine]) -> void:
-	await get_tree().create_timer(0.2).timeout
-	send_dialog(pre_order_dialog)
-
 func recieve_order(item: IngredientContainer):
 	state = State.EVALUATING
-	var eval := order.evaluate_container(item)
-	var dialog: Dialog = evaluation_dialogs[0.0]
-	for score_cutoff in evaluation_dialogs:
-		if eval.score >= score_cutoff:
-			dialog = evaluation_dialogs[score_cutoff]
-	
+	var eval: Evaluation = dialog_loader.get_order().evaluate_container(item)
+
+	var dialog: Array[DialogLine] = dialog_loader.get_evaluation(day, eval.score)
 	if not eval.was_garnish_correct:
-		dialog = Dialog.combine([dialog, incorrect_garnish_dialog])
+		dialog.append_array(dialog_loader.get_additional_evaluation(day, "incorrect_garnish"))
 	if eval.amount_error > 0.2:
-		dialog = Dialog.combine([dialog, small_amount_dialog])
+		dialog.append_array(dialog_loader.get_additional_evaluation(day, "small_amount"))
 	
-	print(dialog.lines)
 	send_dialog(dialog)
 
-func send_dialog(dialog: Dialog):
+func send_dialog(dialog: Array[DialogLine]):
 	DialogManager.dialog_complete.connect(_on_dialog_end)
 	DialogManager.start_dialog(DialogManager.Speaker.CUSTOMER, dialog, speech_sound)
 

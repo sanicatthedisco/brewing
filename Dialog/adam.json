@@ -30,7 +30,7 @@
 		},
 		"order": {
 			"amount": 8,
-			"ingredients": {
+			"composition": {
 				"Espresso": 1,
 				"Water": 3
 			},

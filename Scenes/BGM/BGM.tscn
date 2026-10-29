@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b7fa1jg2haqje"]
+
+[ext_resource type="AudioStream" uid="uid://dgigo0t8gxwih" path="res://Assets/sounds/velvet-moon-braden-deal-main-version-46277-03-08.mp3" id="1_nh73v"]
+
+[node name="Bgm" type="AudioStreamPlayer" unique_id=194642173]
+stream = ExtResource("1_nh73v")
+autoplay = true

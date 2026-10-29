@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dgiub6v6njshy" path="res://Objects/recipes/recipes.tscn" id="24_0odxb"]
 [ext_resource type="PackedScene" uid="uid://bprdunq5uot7" path="res://Objects/Containers/WaterJug/WaterJug.tscn" id="24_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://bj1kxj5b1b0a8" path="res://Objects/recipes/actual_recipes.tscn" id="28_xuqvo"]
+[ext_resource type="PackedScene" uid="uid://b7fa1jg2haqje" path="res://Scenes/BGM/BGM.tscn" id="29_qsp4k"]
 
 [sub_resource type="GDScript" id="GDScript_w48qg"]
 script/source = "@tool
@@ -37,15 +38,10 @@ extends StaticBody2D
 @onready var rim = collider.shape as SegmentShape2D
 "
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_xuqvo"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qsp4k"]
 resource_local_to_scene = true
 a = Vector2(-1000, 0)
 b = Vector2(1071, 1)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_qsp4k"]
-resource_local_to_scene = true
-a = Vector2(-187, 0)
-b = Vector2(214, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kq58d"]
 resource_local_to_scene = true
@@ -58,6 +54,11 @@ a = Vector2(-187, 0)
 b = Vector2(214, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_htxhm"]
+resource_local_to_scene = true
+a = Vector2(-187, 0)
+b = Vector2(214, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jq2sk"]
 resource_local_to_scene = true
 a = Vector2(-198, -1)
 b = Vector2(212.5, 0)
@@ -203,21 +204,21 @@ position = Vector2(928, 988)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Table" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_xuqvo")
+shape = SubResource("SegmentShape2D_qsp4k")
 
 [node name="Shelf1" parent="Surfaces" unique_id=783082087 instance=ExtResource("1_0xm2m")]
 position = Vector2(105, 530)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf1" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_qsp4k")
+shape = SubResource("SegmentShape2D_kq58d")
 
 [node name="Shelf3" parent="Surfaces" unique_id=1016166064 instance=ExtResource("1_0xm2m")]
 position = Vector2(1789, 246)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf3" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_kq58d")
+shape = SubResource("SegmentShape2D_seu75")
 metadata/_edit_lock_ = true
 
 [node name="Shelf4" parent="Surfaces" unique_id=341765567 instance=ExtResource("1_0xm2m")]
@@ -225,7 +226,7 @@ position = Vector2(1794, 528)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf4" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_seu75")
+shape = SubResource("SegmentShape2D_htxhm")
 metadata/_edit_lock_ = true
 
 [node name="Shelf2" parent="Surfaces" unique_id=808925479 instance=ExtResource("1_0xm2m")]
@@ -233,7 +234,7 @@ position = Vector2(114, 240)
 script = SubResource("GDScript_w48qg")
 
 [node name="CollisionShape2D" parent="Surfaces/Shelf2" index="0" unique_id=375987916]
-shape = SubResource("SegmentShape2D_htxhm")
+shape = SubResource("SegmentShape2D_jq2sk")
 
 [node name="Pourable" parent="." unique_id=253281349 instance=ExtResource("23_1u8w0")]
 position = Vector2(1781, 884)
@@ -248,6 +249,10 @@ position = Vector2(1796, 678)
 visible = false
 z_index = 8
 position = Vector2(-1823, -699)
+
+[node name="Bgm" parent="." unique_id=194642173 instance=ExtResource("29_qsp4k")]
+volume_db = -6.899
+pitch_scale = 0.97
 
 [editable path="Garnishes/Lemon"]
 [editable path="Garnishes/Eye"]
